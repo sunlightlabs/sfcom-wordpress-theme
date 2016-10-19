@@ -681,10 +681,15 @@ header .primary-navbar > ul > li > a {
 	padding-right: 15px;
 	padding-left: 15px;
 }
-.primary-navbar li:hover a {
+.primary-navbar > ul > li > a:hover,
+.primary-navbar > ul > .current-menu-item > a {
 	background: transparent url(../img/bg_arrowActive.png) center bottom no-repeat;
+}
+
+.primary-navbar li a:hover,
+.primary-navbar .current-menu-item > a {
 	color: #b9a609;
-	margin-top: 3px;
+	margin-top: 4px;
 	margin-bottom: 0;
 }
 .primary-navbar li.link-donate, .primary-navbar li.link-donate:hover {
@@ -707,7 +712,7 @@ header .primary-navbar > ul > li > a {
 	color: #cda812;
 	letter-spacing: .05em;
 	background: none;
-	margin: 3px 0 0 0; }
+}
 /**
 .primary-navbar li.link-donate:hover a {
   color: #dcc000;
