@@ -1,0 +1,11 @@
+/* TEAM */
+
+SunlightFoundation.com was built by the wonderful people at
+the Sunlight Foundation: http://sunlightfoundation.com/team/.
+
+Located in Washington, DC. Stop by and have a coffee or burrito with us.
+
+
+/* SITE */
+
+Django, the-real-django-wordpress, jQuery, Elasticsearch, Postmark, Markdown, love.

@@ -1,0 +1,471 @@
+/* Necessary Elements from other Olivia files */
+
+@mixin background-rgba($rgba) {
+    background: transparent;
+    background: $rgba;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($rgba)}', endColorstr='#{ie-hex-str($rgba)}');
+    zoom: 1;
+}
+
+.bb-strong {
+    font-weight: 500;
+}
+
+
+/* Modal */
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+}
+
+
+
+$font-family: 'franklin-gothic-urw-1', 'franklin-gothic-urw-2', 'franklin-gothic-urw', helvetica, arial, sans-serif;
+$font-size: 12px;
+
+
+/* Modal Base */
+.bb-modal_donation.contactPaper {
+    padding: 0;
+}
+.bb-modal {
+    width: 550px;
+    border-radius: 0 30px 0 0;
+    border: 1px solid #eceae3;
+    transition: all 300ms;
+    font: {
+        family: $font-family;
+        size: $font-size;
+    }
+    color: #333;
+
+    &.is-active {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+.bb-modal--header {
+    border-radius: 4px 4px 0 0;
+    padding: 10px 50px;
+    position: relative;
+    text-align: center;
+}
+
+.bb-modal--title {
+    @extend .bb-strong;
+    font-size: 19px;
+    margin: 20px 0 15px;
+    display: inline-block;
+    line-height: 19px;
+}
+
+.bb-modal--description {
+    font-family: $font-family;
+    font-size: $font-size;
+    margin: 0 10px 10px 10px;
+    line-height: inherit;
+}
+
+.bb-modal--footer {
+    background-color: #f0eded;
+    border-radius: 0 0 4px 4px;
+    padding: 10px 25px;
+    font-size: 12px;
+    text-align: center;
+    color: #777;
+
+    > p {
+        font-family: $font-family;
+        font-size: 12px;
+        line-height: $font-size;
+        margin: 12px 0;
+    }
+}
+
+.bb-modal--content {
+    padding: 30px 50px 10px;
+    background-color: #f8f8f8;
+    border-top: 1px dashed #d6d3d2;
+    border-bottom: 1px dashed #d6d3d2;
+}
+
+.bb-modal--action {
+    @include background-rgba(rgba(240, 237, 237, 1));
+    position: absolute;
+    left: 15px;
+    top: 24px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+        background-color: #d6d3d2;
+    }
+}
+
+.bb-modal--action-icon {
+    line-height: 20px;
+    font-size: 14px;
+    display: block;
+    width: 15px;
+    height: 24px;
+    margin-left: 4px;
+    margin-top: 2px;
+    background-image: url(../img/bg_arrow_next-previous.png);
+    background-repeat: no-repeat;
+    &.left {
+        background-position: left 0 ;
+    }
+    &.left:hover {
+        background-position: left -25px ;
+    }
+    &.right {
+        background-position: left -50px ;
+    }
+    &.right:hover {
+        background-position: left -75px ;
+    }
+}
+
+a.bb-modal--link {
+    color: #488293;
+    text-decoration: underline;
+}
+
+a.bb-modal--link-alt {
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #999;
+    text-decoration: underline;
+}
+
+/* Modal: Donation  Form*/
+
+#bb-transaction-form {
+    margin: 0;
+}
+
+.bb-modal_donation {
+    @extend .bb-modal;
+}
+
+.bb-modal_donation--header {
+    @extend .bb-modal--header;
+}
+
+.bb-modal-form-step-1,
+.bb-modal-form-step-2,
+.bb-modal-form-step-3 {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    &.is-active {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.bb-form-fieldset {
+    width: 450px;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+.bb-form-fieldset_donation {
+    @extend .form-fieldset !optional;
+    overflow: visible;
+    margin-bottom: 5px;
+}
+
+.bb-form-fieldset_checkmark {
+    @extend .form-fieldset !optional;
+    margin-bottom: 5px;
+}
+
+.bb-form-fieldset_btns {
+    @extend .form-fieldset !optional;
+
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.bb-form-additional-fields {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.bb-form-group {
+    float: left;
+    display: inline-block;
+}
+
+.bb-form-group.fg-10 .bb-input { width: 450px ;}
+.bb-form-group.fg-9 .bb-input { width: 405px ;}
+.bb-form-group.fg-8 .bb-input { width: 360px ;}
+.bb-form-group.fg-7 .bb-input { width: 315px ;}
+.bb-form-group.fg-6 .bb-input { width: 270px ;}
+.bb-form-group.fg-5 .bb-input { width: 225px ;}
+.bb-form-group.fg-4 .bb-input { width: 180px ;}
+.bb-form-group.fg-3 .bb-input { width: 135px ;}
+.bb-form-group.fg-2 .bb-input { width: 90px ;}
+.bb-form-group.fg-1 .bb-input { width: 45px ;}
+
+.bb-label {
+    color: #333;
+    cursor: pointer;
+    display: inline;
+    float: none;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: normal;
+    margin-bottom: 0;
+    line-height: $font-size;
+    .bb-input {
+        display: inline;
+    }
+    > span {
+        display: block;
+        margin-left: 2px;
+        margin-bottom: 0;
+
+        &.bb-other-amount-prefix {
+            font-size: 15px;
+            display: inline;
+        }
+    }
+}
+
+.bb-label_radio {
+    @extend .bb-label;
+    margin-right: 23px;
+    display: inline-block;
+}
+
+.bb-label_radio_custom{
+    @extend .bb-label;
+    margin-right: 0px;
+}
+
+.bb-input[type="radio"]{
+    display: inline;
+}
+
+.bb-input,
+.bb-input[type="text"],
+.bb-input[type="email"] {
+    background: #fff;
+    box-sizing: border-box;
+    padding: 5px 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    color: #444;
+    margin-top: 5px;
+    margin-bottom: 0;
+    border-radius: 0;
+    height: auto;
+    font-family: $font-family;
+    font-style: normal;
+    vertical-align: baseline;
+    height: 30px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+
+    &[type="radio"] {
+        margin-left: 0;
+        margin-top: 0;
+        margin-right: 8px;
+        cursor: pointer;
+        height: auto;
+        vertical-align: baseline;
+        width: 13px;
+    }
+
+    &[type="checkbox"] {
+        cursor: pointer;
+        margin-left: 0;
+        margin-right: 7px;
+        height: auto;
+        width: auto;
+        vertical-align: baseline;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid #999;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    &:invalid {
+        background: #fff;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    &:focus:invalid:focus {
+        outline: none;
+        background: #fff;
+        border: 1px solid #bc5b0a;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    &::-webkit-input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        padding-top: 2px;
+        text-align: center;
+    }
+    &::-moz-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        padding-top: 3px;
+        text-align: center;
+    }
+    &:-ms-input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        padding-top: 3px;
+        text-align: center;
+    }
+    &::input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        padding-top: 3px;
+        text-align: center;
+    }
+}
+
+.bb-input_other-amount {
+    @extend .bb-input;
+    width: 116px;
+    display: inline-block;
+}
+
+.bb-input_note {
+    @extend .bb-input;
+    font-size: 13px;
+    height: 70px;
+
+    &::-webkit-input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        text-align: left;
+    }
+    &::-moz-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        text-align: left;
+    }
+    &:-ms-input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        text-align: left;
+    }
+    &::input-placeholder {
+        font-family: $font-family;
+        font-size: $font-size;
+        text-align: left;
+    }
+}
+
+.bb-input_no-border-left {
+    @extend .bb-input;
+
+    border-left: 0;
+}
+
+.bb-input_error {
+    border: 1px solid #b55300;
+}
+input:focus:required:invalid:focus {
+        border-color: #bc5b0a;
+    }
+
+.bb-divider {
+    border: 0;
+    border-top: 1px dashed #e5e5e5;
+    display: block;
+    margin: 20px 0;
+}
+
+.bb-error_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        line-height: 17px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.bb-error-message {
+    width: 100%;
+    background: #FFE0C6;
+    padding: 10px;
+    border: 1px solid #bc5b0a;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    text-align: left;
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.bb-modal-message {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.bb-modal-message-progress {
+    @extend .bb-modal-message;
+    text-align: center;
+
+    &.is-hidden {
+        display: none;
+    }
+}
+
+.bb-progress_icon {
+    fill: #999;
+    -webkit-animation: spin 700ms infinite linear;
+    -moz-animation: spin 700ms infinite linear;
+    animation: spin 700ms infinite linear;
+}
+
+.bb-progress_text {
+    color: #999;
+}
+
+.bb-modal-message-thankyou {
+    @extend .bb-modal-message;
+    text-align: left;
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
+.bb-chevron path {
+  fill: #ffffff;
+}
