@@ -3,6 +3,8 @@
 @import "fonts";
 @import "colors";
 
+@import "shared-content";
+
 .party.rep {
 	color: $demblue;
 }
@@ -74,7 +76,17 @@ body.home {
 	background: url(../img/bg_homeWrap.jpg) center top repeat-x;
 }
 
+main {
+	@extend .span9;
+}
 
+aside.sidebar {
+	@extend .span3;
+}
+
+.page-template-staff-page main {
+	@extend .span12;
+}
 
 /* Link Styles */
 a {
@@ -200,6 +212,7 @@ a.btn:hover {
 .sidebar {
 	background: url(../img/bg_sidebarBar.png) top left repeat-y;
 	color: #8e8883;
+	padding-bottom: 20px;
 	a {
 		border-bottom: 1px dotted #C9A706;
 		color: #76716E;
@@ -218,6 +231,9 @@ a.btn:hover {
 }
 .sidebar > * {
 	margin-left: 20px;
+}
+.sidebar > ul {
+	margin-left: 40px;
 }
 .smLt #ltColumn {
 	width: 620px;
@@ -366,22 +382,6 @@ form.floatedList li {
 }
 .inlineSpan span {
 	display: inline;
-}
-ul.fakeTables, ol.fakeTables {
-	list-style: none;
-	margin-left: 0;
-}
-.fakeTables .col {
-	float: left;
-}
-.fakeTables li {
-	margin-bottom: 15px;
-}
-.fakeTables.columns li, .columns.two {
-	float: left;
-}
-.fakeTables.columns.two li, .columns.two {
-	width: 50%;
 }
 .stripedTables li {
 	padding: 15px;
@@ -682,12 +682,14 @@ header .primary-navbar > ul > li > a {
 	padding-left: 15px;
 }
 .primary-navbar > ul > li > a:hover,
-.primary-navbar > ul > .current-menu-item > a {
+.primary-navbar > ul > .current-menu-item > a,
+.primary-navbar > ul > .current-page-ancestor > a {
 	background: transparent url(../img/bg_arrowActive.png) center bottom no-repeat;
 }
 
 .primary-navbar li a:hover,
-.primary-navbar .current-menu-item > a {
+.primary-navbar .current-menu-item > a,
+.primary-navbar > ul > .current-page-ancestor > a {
 	color: #b9a609;
 	margin-top: 4px;
 	margin-bottom: 0;
@@ -809,8 +811,10 @@ header .primary-navbar > ul > li > a {
 		color: #b9a609;
 	}
 }
-.current-menu-item .sub-menu {
+.current-menu-item .sub-menu,
+.current-page-ancestor .sub-menu {
 	display: block;
+  width: 100%;
 }
 
 .expert-list {
@@ -1555,97 +1559,24 @@ p.intro, .intro p {
 	font-weight: 200;
 }
 
-/* staff */
-.sunlightStaff > li {
-	max-width: 100%;
-}
-.sunlightStaff ol li {
-	float: left;
-	width: 215px;
-	height: 100px;
-	margin: 0 10px 30px;
-}
-.sunlightStaff li a span {
-	margin-top: 40px;
-}
-.sunlightStaff li span {
-	float: left;
-	font-family: $font-serif;
-	font-style: oblique;
-	border-left: 1px solid #dac518;
-	display: block;
-	padding-left: 8px;
-	line-height: 18px;
-	color: #6d6666;
-	width: 106px;
-	margin-left: -10px;
-}
-.staffTitle {
-	font-family: $font-serif;
-	font-style: oblique;
-}
-.sunlightStaff .staffTitle {
-	padding-top: 3px;
-	font-size: 85%;
-	color: #8c8383;
-	line-height: 15px;
-}
-.imgWrapper {
-	background: url("../img/brandeis_blinded_by_the_sunlight.png") center top no-repeat;
-	background-size: 100px;
-	-webkit-border-radius: 60px;
-	-moz-border-radius: 60px;
-	border-radius: 60px;
-	width: 100px;
-	height: 100px;
-	float: left;
-	border: 5px solid rgb(252, 251, 250);
-}
-.sunlightStaff a:hover .imgWrapper {
-	background: url("../img/brandeis_blinded_by_the_sunlight.png") center bottom no-repeat;
-	background-size: 100px;
-	width: 100px;
-	height: 100px;
-	-webkit-filter: sepia(0.3);
-	-moz-filter: sepia(0.3);
-	-ms-filter: sepia(0.3);
-	filter: sepia(0.3);
-	border: 5px solid rgb(252, 251, 239);
-}
 .staffHeader {
-	height: 59px;
+  min-height: 110px;
 	padding-top: 35px;
 	margin-bottom: 30px;
-	padding-left: 85px;
-	z-index: 3;
-	position: relative;
-	.staffPhoto {
-		background: url("../img/avatar_anonymous.png") center top no-repeat;
-		background-size: 100px;
-		-webkit-border-radius: 60px;
-		-moz-border-radius: 60px;
-		border-radius: 60px;
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		left: -20px;
-		top: 0;
-		display: block;
-		border: 5px solid rgb(252, 251, 250);
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
+
+	.imgWrapper {
+		margin-right: 10px;
 	}
-	.withTip {
-		position: absolute;
+
+	.name {
+		margin: 15px 0 0;
 	}
+
 	.staffTitle {
-		position: absolute;
-		top: 69px;
-	}
-	.staffFollow {
-		position: absolute;
-		top: 96px;
+		margin: 7px 0;
+		display: inline-block;
+		font-family: "Georgia", "Times New Roman", "Times", serif;
+		font-style: oblique;
 	}
 }
 .staffPhoto span.tip {
@@ -2748,7 +2679,7 @@ table .sorting_desc {
 	float: left;
 	width: 460px;
 }
-section, .section {
+.content section, .content .section {
 	border-top: 1px dashed #d6d3d2;
 	margin-top: 2em;
 	padding-top: 2em;

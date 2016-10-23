@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+	<!-- single.php -->
 	<main role="main">
 	<!-- section -->
 	<section>

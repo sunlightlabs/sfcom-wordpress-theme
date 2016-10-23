@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@import "fonts";
+@import "colors";
+
+body#tinymce.wp-editor {
+  @import "shared-content";
+}

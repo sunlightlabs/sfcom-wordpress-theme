@@ -1,0 +1,104 @@
+/* Fonts for the Sunlight Foundation */
+/* Colors for the Sunlight Foundation */
+/* line 6, ../scss/tinymce.scss */
+body#tinymce.wp-editor {
+  /* General */
+  /* staff */
+  /* Circle profile photo */
+}
+/* line 3, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .fakeTables, body#tinymce.wp-editor .sunlightStaff, body#tinymce.wp-editor .vips {
+  list-style: none;
+  margin-left: 0;
+}
+/* line 6, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .fakeTables .col, body#tinymce.wp-editor .sunlightStaff .col, body#tinymce.wp-editor .vips .col {
+  float: left;
+}
+/* line 9, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .fakeTables li, body#tinymce.wp-editor .sunlightStaff li, body#tinymce.wp-editor .vips li {
+  margin-bottom: 15px;
+}
+/* line 12, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .fakeTables.columns li, body#tinymce.wp-editor .columns.sunlightStaff li, body#tinymce.wp-editor .columns.vips li, body#tinymce.wp-editor .fakeTables .columns.two, body#tinymce.wp-editor .sunlightStaff .columns.two, body#tinymce.wp-editor .vips .columns.two {
+  float: left;
+}
+/* line 15, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .fakeTables.columns.two li, body#tinymce.wp-editor .columns.two.sunlightStaff li, body#tinymce.wp-editor .columns.two.vips li, body#tinymce.wp-editor .fakeTables .columns.two, body#tinymce.wp-editor .sunlightStaff .columns.two, body#tinymce.wp-editor .vips .columns.two {
+  width: 50%;
+}
+/* line 21, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+/* line 27, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff li {
+  float: left;
+  width: 215px;
+  height: 100px;
+  margin: 0 10px 30px;
+}
+/* line 34, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff .staffTitle, body#tinymce.wp-editor .sunlightStaff .name {
+  float: left;
+  font-family: "Georgia", "Times New Roman", "Times", serif;
+  font-style: oblique;
+  border-left: 1px solid #dac518;
+  display: block;
+  padding-left: 8px;
+  line-height: 18px;
+  color: #6d6666;
+  width: 106px;
+  margin-left: -10px;
+  position: relative;
+  z-index: 10;
+}
+/* line 50, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff .name {
+  margin-top: 20px;
+}
+/* line 54, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff .imgWrapper:hover img {
+  top: -100px;
+  left: 0;
+  -webkit-filter: sepia(0.3);
+  -moz-filter: sepia(0.3);
+  -ms-filter: sepia(0.3);
+  filter: sepia(0.3);
+}
+/* line 63, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .sunlightStaff .staffTitle {
+  font-family: "Georgia", "Times New Roman", "Times", serif;
+  font-style: oblique;
+  padding-top: 3px;
+  font-size: 85%;
+  color: #8c8383;
+  line-height: 15px;
+}
+/* line 75, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .imgWrapper {
+  background: url("../img/brandeis_blinded_by_the_sunlight.png") center top no-repeat;
+  background-size: 100px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  float: left;
+  border: 5px solid #fcfbfa;
+}
+/* line 87, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .imgWrapper img {
+  z-index: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/* line 97, ../scss/_shared-content.scss */
+body#tinymce.wp-editor .vips a {
+  color: #78bcbf;
+  font-size: 120%;
+}

@@ -1,0 +1,102 @@
+/* General */
+
+.fakeTables {
+  list-style: none;
+  margin-left: 0;
+  .col {
+    float: left;
+  }
+  li {
+    margin-bottom: 15px;
+  }
+  &.columns li, .columns.two {
+    float: left;
+  }
+  &.columns.two li, .columns.two {
+    width: 50%;
+  }
+}
+
+/* staff */
+.sunlightStaff {
+  @extend .fakeTables;
+  float: left;
+  clear: both;
+  width: 100%;
+
+  li {
+    float: left;
+    width: 215px;
+    height: 100px;
+    margin: 0 10px 30px;
+  }
+
+  .staffTitle, .name {
+    float: left;
+    font-family: $font-serif;
+    font-style: oblique;
+    border-left: 1px solid #dac518;
+    display: block;
+    padding-left: 8px;
+    line-height: 18px;
+    color: #6d6666;
+    width: 106px;
+    margin-left: -10px;
+
+    position: relative; // only for z-index.
+    z-index: 10;
+  }
+
+  .name {
+    margin-top: 20px;
+  }
+
+  .imgWrapper:hover img {
+    top: -100px;
+    left: 0;
+    -webkit-filter: sepia(0.3);
+    -moz-filter: sepia(0.3);
+    -ms-filter: sepia(0.3);
+    filter: sepia(0.3);
+  }
+
+  .staffTitle {
+    font-family: $font-serif;
+    font-style: oblique;
+    padding-top: 3px;
+    font-size: 85%;
+    color: #8c8383;
+    line-height: 15px;
+  }
+
+}
+
+/* Circle profile photo */
+.imgWrapper {
+  background: url("../img/brandeis_blinded_by_the_sunlight.png") center top no-repeat;
+  background-size: 100px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  float: left;
+  border: 5px solid rgb(252, 251, 250);
+
+  img {
+    z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+.vips {
+  @extend .fakeTables;
+  a {
+    color: #78bcbf;
+    font-size: 120%;
+  }
+}
+

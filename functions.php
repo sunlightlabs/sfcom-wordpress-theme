@@ -384,6 +384,13 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
+// Remove BRs, but not Ps, from content.
+remove_filter( 'the_content', 'wpautop' );
+function wpse_wpautop_nobr( $content ) {
+    return wpautop( $content, false );
+}
+add_filter( 'the_content', 'wpse_wpautop_nobr' );
+
 // Shortcodes
 add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
 add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
@@ -448,5 +455,174 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+/**
+ * Add TinyMCE custom styles for Admin Editor
+ */
+
+// Callback function to insert 'styleselect' into the $buttons array
+function html5_mce_buttons( $buttons ) {
+    // Just remove the format select.
+    // $buttons = array_diff($buttons, array('formatselect'));
+
+    // Remove all of the default buttons here, they're not useful.
+    // $buttons = array();
+
+    // Push the Style Select onto the buttons.
+    array_unshift( $buttons, 'styleselect' );
+
+    return $buttons;
+}
+// Register our callback to the appropriate filter
+add_filter('mce_buttons', 'html5_mce_buttons');
+
+// Callback function to filter the MCE settings
+function html5_mce_before_init_insert_formats( $init_array ) {
+    // Define the style_formats array
+    $style_formats = array(
+        // Each array child is a format with its own settings
+        array(
+            'title' => 'Profile Photo',
+            'classes' => 'imgWrapper',
+            'block' => 'span'
+        ),
+        array(
+            'title' => 'VIP List',
+            'classes' => 'vips',
+            'selector' => 'ul',
+            'wrapper' => 'false'
+        )
+        // array(
+        //     'title' => 'Title',
+        //     'classes' => 'title',
+        //     'block' => 'span',
+        //     'attributes' => array('style' => '')
+        // ),
+        // array(
+        //     'title' => 'Subtitle',
+        //     'classes' => 'subtitle',
+        //     'block' => 'span',
+        //     'attributes' => array('style' => '')
+        // ),
+        // array(
+        //     'title' => 'Large Title',
+        //     'styles' => array(
+        //         'font-size' => '46px',
+        //         'line-height' => '1'
+        //     ),
+        //     'wrapper' => 'false',
+        //     'selector' => '*'
+        // ),
+        // array(
+        //     'title' => 'Medium Title',
+        //     'styles' => array(
+        //         'font-size' => '32px',
+        //         'line-height' => '1'
+        //     ),
+        //     'wrapper' => 'false',
+        //     'selector' => '*'
+        // ),
+        // array(
+        //     'title' => 'Normal Title',
+        //     'styles' => array(
+        //         'font-size' => '22px',
+        //         'line-height' => '1'
+        //     ),
+        //     'wrapper' => 'false',
+        //     'selector' => '*'
+        // ),
+        // array(
+        //     'title' => 'Hero Content',
+        //     'classes' => 'hero-text',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => 'Hero Aside',
+        //     'classes' => 'hero-aside',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => '1/2 Column',
+        //     'classes' => 'half-column',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => '1/3 Column',
+        //     'classes' => 'third-column',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => '1/4 Column',
+        //     'classes' => 'fourth-column',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => 'Feature Box',
+        //     'classes' => 'feature-box',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => 'Button',
+        //     'classes' => 'button',
+        //     'wrapper' => false,
+        //     'selector' => 'a'
+        // ),
+        // array(
+        //     'title' => 'White Text',
+        //     'classes' => 'white-text',
+        //     'wrapper' => 'false',
+        //     'selector' => '*'
+        // ),
+        // array(
+        //     'title' => 'Teal Text',
+        //     'classes' => 'teal-text',
+        //     'wrapper' => 'false',
+        //     'selector' => '*'
+        // ),
+        // array(
+        //     'title' => 'Grey Background',
+        //     'classes' => 'grey-bg',
+        //     'wrapper' => 'false',
+        //     'selector' => 'div'
+        // ),
+        // array(
+        //     'title' => 'MultiCol List',
+        //     'classes' => 'column-list',
+        //     'selector' => 'ul',
+        //     'wrapper' => false
+        // ),
+        // array(
+        //     'title' => 'Featured Image',
+        //     'classes' => 'featured-image',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // ),
+        // array(
+        //     'title' => 'Header Image',
+        //     'classes' => 'header-image',
+        //     'wrapper' => true,
+        //     'block' => 'div'
+        // )
+    );
+    // Insert the array, JSON ENCODED, into 'style_formats'
+    $init_array['style_formats'] = json_encode( $style_formats );
+
+    return $init_array;
+
+}
+// Attach callback to 'tiny_mce_before_init'
+add_filter( 'tiny_mce_before_init', 'html5_mce_before_init_insert_formats' );
+
+// Get our custom styles.
+function my_theme_add_editor_styles() {
+    add_editor_style( get_template_directory_uri() . '/static/css/tinymce.css' );
+}
+add_action( 'admin_init', 'my_theme_add_editor_styles' );
 
 ?>
