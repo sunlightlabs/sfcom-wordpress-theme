@@ -32,7 +32,7 @@
 
 
         <?php if($meta['staff-github'] && $meta['staff-github'][0]) { ?>
-          <a href="http://www.github.com/in/<?php print $meta['staff-github'][0] ?>">
+          <a href="http://www.github.com/<?php print $meta['staff-github'][0] ?>">
 	          <span class="sficon-github"></span>
 	          <span><?php print $meta['staff-github'][0] ?>&nbsp;&nbsp;</span></a>
         <?php } ?>
