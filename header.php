@@ -21,7 +21,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="<?php bloginfo('description'); ?>" />
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon" />
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed" />
+		<?php /* <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed" /> */ ?>
 		<link rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
 		<link rel="mission" href="http://sunlightfoundation.com/about/" />
 		<link rel="bitcoin" href="bitcoin:1Nt6CD1SHcvA2sfugx1gqbQQ25gQRA5fBm" title="Bitcoin donation address" />
