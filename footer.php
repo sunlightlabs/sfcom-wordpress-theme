@@ -1,73 +1,45 @@
 </div>
 		<div id="footerWrapper">
-			<footer role="contentinfo">
-				<div id="signupRibbon">
-					<span class="textReplace">Become a part of the open government community and stay up to date with what's going on by signing up</span>
-					<form action="/join/" method="post" id="signup-form">
-						<input type='hidden' name='csrfmiddlewaretoken' value='EvptIhlJ5pkIojBg2sEilQYQj3e7cgFN' />
-						<input type="text" name="email" placeholder="your email address">
-						<input type="text" name="zipcode" placeholder="your zip code">
-						<button type="submit" class="btn">Sign up</button>
-					</form>
-					<div class="signup-thanks">
-						Thanks! <a href="" style="color: #f4f2f0; text-decoration: underline;">Care to tell us more about you?</a>
-					</div>
+			<footer role="contentinfo" class="container footer">
+				<div class="signup-container">
+					<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widget-signup')) ?>
 				</div>
-				<div id="bottomFooter">
-					<div id="contactInfo">
-						<h4>Contact Us</h4>
-						<address class="vcard clearfix">
-							<span class="adr">
-								<span class="street-address">1818 N Street NW</span>
-								<span class="extended-address">Suite 300</span>
-								<span class="locality">Washington</span>,
-								<span class="region" title="District of Columbia">DC</span>
-								<span class="postal-code">20036</span>
-							</span>
-							<span class="tel"><a href="tel:+12027421520">202-742-1520</a></span>
-							<a href="callto:+12027421520" class="tel-skype textReplace">Call with Skype</a>
-						</address>
-						<nav>
-							<ul class="nav clearfix">
-								<li class="contact"><a href="/contact/">Contact</a></li>
-								<li class="about"><a href="/about/">About</a></li>
-								<li class="jobs"><a href="/jobs/">Jobs</a></li>
-							</ul>
+
+				<div id="bottomFooter" class="bottom-footer">
+					<div id="contactInfo" class="contact-info">
+						<div class="footer-contact-widget">
+							<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widget-contact')) ?>
+						</div>
+						<nav class="footer-nav">
+						  <?php wp_nav_menu(
+								array(
+		              'theme_location' => 'footer-menu',
+		              'menu_class' => 'footer-nav'
+								)
+							) ?>
 						</nav>
 						<div id="follow-buttons">
-							<a rel="me" href="https://www.facebook.com/sunlightfoundation"><span class="sficon-facebook"></span></a>
-							<a rel="me" href="https://twitter.com/sunfoundation"><span class="sficon-twitter"></span></a>
-							<a rel="me" href="https://www.flickr.com/photos/sunlightfoundation"><span class="sficon-flickr"></span></a>
-							<a rel="me" href="https://github.com/sunlightlabs"><span class="sficon-github"></span></a>
-							<a rel="me" href="http://instagram.com/sunfoundation"><span class="sficon-instagram"></span></a>
-							<a rel="me" href="http://sunfoundation.tumblr.com/"><span class="sficon-tumblr"></span></a>
-							<a rel="me" href="https://www.youtube.com/user/SunlightFoundation"><span class="sficon-youtube"></span></a>
+							<?php wp_nav_menu(
+								array(
+		              'theme_location' => 'footer-social-menu',
+		              'menu_class' => 'social-nav'
+								)
+							) ?>
 						</div>
 					</div>
-					<div id="privacy">
-						<p>Our <a href="/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="/legal/terms/">terms of service</a>.</p>
-						<p>This work by Sunlight Foundation, unless otherwise noted, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-						<p><a href="/donate/" >Donate</a> to the Sunlight Foundation</p>
-					</div>
-					<div class="clear"></div>
-					<div class="affiliated">
-						<div class="cfc">
-							<a href="http://www.cfctoday.org/"><img src="https://ds5jihom238dx.cloudfront.net/static/img/cfc_logo.aee19847d59a.png" alt="CFC (Combined Federal Campaign) Today" /></a>
-							<p class="cfc-number">59063</p>
-						</div>
-						<a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=13197#.UmqVsZTXSG0"><img class="charity-navigator" src="https://ds5jihom238dx.cloudfront.net/static/img/charity_navigator.497e10f11f60.png" alt="Charity Navigator" /></a>
+					<div class="blurb">
+						<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widget-blurb')) ?>
 					</div>
 				</div>
 			</footer>
 		</div>
+		<div class="final-bottom">
+			<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-widget-bottom')) ?>
+		</div>
 
 		<!-- primary javascript includes -->
 		<script src="https://ds5jihom238dx.cloudfront.net/static/js/sfcom.8e2d0916d933.js"></script>
-		
 
-		
-
-		
 		<?php wp_footer(); ?>
 		<!-- analytics includes -->
 		<script>

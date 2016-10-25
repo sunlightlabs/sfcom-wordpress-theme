@@ -31,80 +31,66 @@
 		<!-- rss feeds -->
 		<link rel="alternate" type="application/rss+xml" title="Sunlight Foundation Blog Feed" href="http://sunlightfoundation.com/blog/rss/" />
 		<!-- stylesheets -->
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/main.css" />
 
 		<script src="<?php echo get_template_directory_uri(); ?>/highlight.min.js"></script>
+
 		<script>hljs.initHighlightingOnLoad();</script>
 		<!-- HTML5 shiv for IE versions < 9 -->
 		<!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/lib/bootstrap.min.js"></script>
 		<script src="//use.typekit.com/blp6kvr.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/brandingbar.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/sf-icons.css" />
+
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-		<div id="container">
+		<div>
 			<header id="mainHeader" class="container">
-				<div class="row">
-					<div class="span4">
+					<div class="col-md-4">
 						<h1><a href="<?php echo home_url(); ?>">Sunlight Foundation</a></h1>
 					</div>
-					<div class="span8">
-						<div class="clearfix"></div>
-
-							<div class="loginlinks">
-								<ul>
-
-
-										<li><a href="/logout/">Log Out</a></li>
-
-								</ul>
-							</div>
-							<div id="follow-buttons">
-								<h4>Follow Us</h4>
-								<a href="https://www.facebook.com/sunlightfoundation"><span class="sficon-facebook"></span></a>
-								<a href="https://twitter.com/sunfoundation"><span class="sficon-twitter"></span></a>
-								<a href="https://github.com/sunlightlabs"><span class="sficon-github"></span></a>
-								<a href="http://sunfoundation.tumblr.com/"><span class="sficon-tumblr"></span></a>
-							</div>
-							<form action="/search/" method="get" id="mainsearch" class="searchform globalsearch">
-								<input class="transparent" type="search" name="q" id="id_q" placeholder="search the site">
-								<button class="textReplace" type="submit">
-									 <span>Search</span>
-								</button>
-							</form>
-
+					<div class="col-md-8">
+						<div id="follow-buttons">
+							<h4>Follow Us</h4>
+							<?php wp_nav_menu(
+								array(
+		              'theme_location' => 'social-menu',
+		              'menu_class' => 'social-nav'
+								)
+							) ?>
+						</div>
+						<form action="/search/" method="get" id="mainsearch" class="searchform globalsearch">
+							<input class="transparent" type="search" name="q" id="id_q" placeholder="search the site">
+							<button class="textReplace" type="submit">
+								 <span>Search</span>
+							</button>
+						</form>
 					</div>
-				</div>
-				<div class="row">
-					<div class="span12">
-					<!--
-						<nav class="primary-nav clearfix">
+					<div class="clearfix"></div>
 
-								<ul class="nav nav-pills clearfix">
-									<li class="blog"><a href="/blog/">Blog</a></li>
-									<li class="projects"><a href="/tools/">Tools</a></li>
-									<li class="api"><a href="/api/">APIs</a></li>
-									<li class="policy"><a href="/policy/">Policy</a></li>
-									<li class="issues"><a href="/issues/">Issues</a></li>
-									<li class="press"><a href="/press/">Press</a></li>
-									<li class="about"><a href="/about/">About</a></li>
-									<li class="contact"><a href="/contact/">Contact</a></li>
-									<li class="join"><a href="/join/">join</a></li>
-									<li class="donate"><a href="/donate/" rel="payment" title="Donate to the Sunlight Foundation">donate</a></li>
-								</ul>
-
-						</nav> -->
-					<!-- nav -->
-					<nav class="primary-navbar clearfix" role="navigation">
-						<?php wp_nav_menu(array("menu_class" => "nav nav-pills clearfix")); ?>
-					</nav>
-					<!-- /nav -->
-
+				<!-- nav -->
+				<nav class="primary-navbar" role="navigation">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbar-collapse">
+					<?php wp_nav_menu(
+						array(
+              'theme_location' => 'header-menu',
+              'container' => 'div',
+              'container_class' => 'collapse navbar-collapse',
+              'menu_class' => 'nav navbar-nav',
+							'walker' => new wp_bootstrap_navwalker()
+						)
+					) ?>
 					</div>
-				</div>
+				</nav>
+				<!-- /nav -->
 			</header>
-			<div class="container">
+			<div class="clearfix container">

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-	<!-- page.php -->
-	<main role="main">
+	<!-- page-nosidebar.php -->
+	<main role="main" class="has-sidebar">
 		<!-- section -->
 		<section>
 
@@ -39,7 +39,5 @@
 		</section>
 		<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -1,10 +1,35 @@
 <?php get_header(); ?>
+<?php
+	$archive_category = false;
+	$queried_object = get_queried_object();
+	if(get_class($queried_object) == 'WP_Term') {
+		$archive_category = $queried_object->name;
+	}
+?>
 	<!-- index.php -->
-	<main role="main">
+	<main role="main" class="has-sidebar">
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+			<div class="blog-nav">
+				<ul>
+					<li class="channel <?php if(!$archive_category) print 'active' ?>">
+						<a href="/blog/">all</a>
+					</li>
+					<li class="channel technology <?php if($archive_category == 'Technology') print 'active' ?>">
+						<a href="/topics/channels/channel-technology/">technology</a>
+					</li>
+					<li class="channel policy <?php if($archive_category == 'Policy') print 'active' ?>">
+						<a href="/topics/channels/channel-policy/">policy</a>
+					</li>
+					<li class="channel investigations <?php if($archive_category == 'Investigations') print 'active' ?>">
+						<a href="/topics/channels/channel-investigations/">investigations</a>
+					</li>
+					<li class="channel multimedia <?php if($archive_category == 'Multimedia') print 'active' ?>">
+						<a href="/topics/channels/channel-multimedia/">multimedia</a>
+					</li>
+				</ul>
+			</div>
 
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
@@ -34,8 +59,6 @@
 					<!-- /post details -->
 
 					<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
-					<?php edit_post_link(); ?>
 
 				</article>
 				<!-- /article -->

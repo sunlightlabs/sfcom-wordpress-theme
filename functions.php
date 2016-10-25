@@ -11,6 +11,8 @@
 
 // Load any external files you have here
 
+require_once ('lib/wp_bootstrap_navwalker.php');
+
 /*------------------------------------*\
 	Theme Support
 \*------------------------------------*/
@@ -62,30 +64,6 @@ if (function_exists('add_theme_support'))
 	Functions
 \*------------------------------------*/
 
-// HTML5 Blank navigation
-function html5blank_nav()
-{
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
-}
 
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
@@ -127,8 +105,9 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'social-menu' => __('Social Nav', 'html5blank'),
+        'footer-menu' => __('Footer Menu', 'html5blank'),
+        'footer-social-menu' => __('Footer Social Nav', 'html5blank')
     ));
 }
 
@@ -175,7 +154,7 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'description' => __('Top Sidebar Widget', 'html5blank'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -186,8 +165,48 @@ if (function_exists('register_sidebar'))
     // Define Sidebar Widget Area 2
     register_sidebar(array(
         'name' => __('Widget Area 2', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'description' => __('Bottom Sidebar Widget', 'html5blank'),
         'id' => 'widget-area-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    register_sidebar(array(
+        'name' => __('Footer Widget Signup', 'html5blank'),
+        'description' => __('Footer Email Signup', 'html5blank'),
+        'id' => 'footer-widget-signup',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+   register_sidebar(array(
+        'name' => __('Footer Widget Contact Info', 'html5blank'),
+        'description' => __('Footer Contact Info', 'html5blank'),
+        'id' => 'footer-widget-contact',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+   register_sidebar(array(
+        'name' => __('Footer Widget Blurb', 'html5blank'),
+        'description' => __('Footer Blurb', 'html5blank'),
+        'id' => 'footer-widget-blurb',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+   register_sidebar(array(
+        'name' => __('Footer Widget Bottom', 'html5blank'),
+        'description' => __('The very-very bottom of the page.', 'html5blank'),
+        'id' => 'footer-widget-bottom',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
@@ -210,12 +229,14 @@ function html5wp_pagination()
 {
     global $wp_query;
     $big = 999999999;
-    echo paginate_links(array(
+    $return = paginate_links(array(
         'base' => str_replace($big, '%#%', get_pagenum_link($big)),
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
+        'total' => $wp_query->max_num_pages,
+        'type' => 'list'
     ));
+    echo str_replace( "<ul class='page-numbers'>", '<ul class="pagination">', $return);
 }
 
 // Custom Excerpts
@@ -482,16 +503,70 @@ function html5_mce_before_init_insert_formats( $init_array ) {
     $style_formats = array(
         // Each array child is a format with its own settings
         array(
-            'title' => 'Profile Photo',
-            'classes' => 'imgWrapper',
-            'block' => 'span'
+            'title' => 'Feature',
+            'classes' => 'homeFeatures',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => 'Featured Video',
+            'classes' => 'featuredVideo',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => 'Divider Title',
+            'classes' => 'divider-title',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => 'Main Tagline',
+            'classes' => 'main-tagline',
+            'wrapper' => 'false',
+            'selector' => '*'
+        ),
+        array(
+            'title' => '3/4 Column',
+            'classes' => 'column-3-4',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => '1/4 Column',
+            'classes' => 'column-1-4',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => '1/2 Column',
+            'classes' => 'column-1-2',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => '2/3 Column',
+            'classes' => 'column-2-3',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
+            'title' => '1/3 Column',
+            'classes' => 'column-1-3',
+            'wrapper' => 'true',
+            'block' => 'div'
         ),
         array(
             'title' => 'VIP List',
             'classes' => 'vips',
             'selector' => 'ul',
             'wrapper' => 'false'
-        )
+        ),
+        array(
+            'title' => 'Profile Photo',
+            'classes' => 'imgWrapper',
+            'block' => 'span'
+        ),
         // array(
         //     'title' => 'Title',
         //     'classes' => 'title',
