@@ -3934,24 +3934,40 @@ footer #follow-buttons {
 	}
 }
 
-.signup-container {
-	position: absolute;
-	top: -95px;
-	width: 100%;
+@media (min-width: $screen-md-max) {
+	.signup-container {
+		position: absolute;
+		top: -95px;
+		width: 100%;
+	}
 }
 
 .signupRibbon {
-	background: url(../img/bg_footerBanner.png) left 37px no-repeat;
+	@media (min-width: $screen-md-max) {
+		background: url(../img/bg_footerBanner.png) left 37px no-repeat;
+	}
+	@media (max-width: $screen-md-max) {
+		background-color: #87acb5;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 20px;
+		float: left;
+		margin-bottom: 20px;
+	}
 	margin-left: 10px;
 	padding-left: 20px;
 	padding-top: 48px;
 	padding-bottom: 20px;
-	span.textReplace {
-		background: url(../img/bg_signupTitle.png) top left no-repeat;
+	.ribbonMessage {
 		width: 348px;
 		float: left;
 		height: 38px;
 		margin-right: 15px;
+		@media (max-width: $screen-md-max) {
+			float: none;
+			width: 100%;
+			margin-bottom: 10px;
+		}
 	}
 	input[type=text] {
 		border: 3px solid #cad4d7;
@@ -3965,6 +3981,22 @@ footer #follow-buttons {
 	input[name=zipcode] {
 		width: 100px;
 	}
+	@media (max-width: $screen-md-max) {
+		input[name=email] {
+			width: 100%;
+			margin-bottom: 5px;
+		}
+		input[name=zipcode] {
+			width: 65%;
+		}
+		button[type=submit] {
+			padding-left: 0;
+			padding-right: 0;
+			width: 30%;
+			float: right;
+		}
+	}
+
 	.signup-thanks {
 		display: none;
 		font-size: 160%;
