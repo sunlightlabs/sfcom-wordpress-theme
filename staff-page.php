@@ -21,13 +21,20 @@
         <?php if($meta['staff-twitter'] && $meta['staff-twitter'][0]) { ?>
           <a href="http://twitter.com/<?php print $meta['staff-twitter'][0] ?>">
           <span class="sficon-twitter"></span>
-	        <span>Twitter&nbsp;&nbsp;</span></a>
+	        <span><?php print $meta['staff-twitter'][0] ?>&nbsp;&nbsp;</span></a>
         <?php } ?>
 
         <?php if($meta['staff-linkedin'] && $meta['staff-linkedin'][0]) { ?>
           <a href="http://www.linkedin.com/in/<?php print $meta['staff-linkedin'][0] ?>">
 	          <span class="sficon-linkedin"></span>
-	          <span>LinkedIn&nbsp;&nbsp;</span></a>
+	          <span><?php print $meta['staff-linkedin'][0] ?>&nbsp;&nbsp;</span></a>
+        <?php } ?>
+
+
+        <?php if($meta['staff-github'] && $meta['staff-github'][0]) { ?>
+          <a href="http://www.github.com/in/<?php print $meta['staff-github'][0] ?>">
+	          <span class="sficon-github"></span>
+	          <span><?php print $meta['staff-github'][0] ?>&nbsp;&nbsp;</span></a>
         <?php } ?>
     	</div>
     </div>
@@ -35,12 +42,12 @@
 			<!-- article -->
 			<article id="post-<?php the_ID(); ?>" <?php post_class("row"); ?>>
 
-				<div class="span8">
+				<div class="col-md-8">
 
 					<?php the_content(); ?>
 
 				</div>
-				<div class="span4 sidebar">
+				<div class="col-md-4 sidebar">
 					<h3>Recent blog contributions from <?php the_title() ?></h3>
 
 					<?php
