@@ -175,6 +175,7 @@ body#tinymce.wp-editor .divider-title * {
 /* line 156, ../scss/_shared-content.scss */
 body#tinymce.wp-editor .divider-title img {
   padding: 0;
+  vertical-align: middle;
 }
 /* line 30, ../scss/tinymce.scss */
 body#tinymce.wp-editor .homeFeatures {
@@ -217,6 +218,26 @@ body#tinymce.wp-editor .featuredVideo:before {
   content: "Featured Video";
 }
 /* line 38, ../scss/tinymce.scss */
+body#tinymce.wp-editor .divider-title {
+  border: 2px solid #666;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 10px;
+}
+/* line 13, ../scss/tinymce.scss */
+body#tinymce.wp-editor .divider-title:before {
+  font-size: 11px;
+  color: #ffffff;
+  background-color: #666666;
+  padding: 0 4px;
+  border: 1px solid #000000;
+  position: relative;
+  float: right;
+  right: 5px;
+  top: -15px;
+  content: "Divider Title";
+}
+/* line 42, ../scss/tinymce.scss */
 body#tinymce.wp-editor .column-3-4 {
   border: 2px solid #666;
   border-radius: 4px;
@@ -236,7 +257,7 @@ body#tinymce.wp-editor .column-3-4:before {
   top: -15px;
   content: "3/4 Column";
 }
-/* line 41, ../scss/tinymce.scss */
+/* line 45, ../scss/tinymce.scss */
 body#tinymce.wp-editor .column-1-4 {
   border: 2px solid #666;
   border-radius: 4px;
@@ -256,7 +277,7 @@ body#tinymce.wp-editor .column-1-4:before {
   top: -15px;
   content: "1/4 Column";
 }
-/* line 44, ../scss/tinymce.scss */
+/* line 48, ../scss/tinymce.scss */
 body#tinymce.wp-editor .column-1-2 {
   border: 2px solid #666;
   border-radius: 4px;
@@ -276,7 +297,7 @@ body#tinymce.wp-editor .column-1-2:before {
   top: -15px;
   content: "1/2 Column";
 }
-/* line 47, ../scss/tinymce.scss */
+/* line 51, ../scss/tinymce.scss */
 body#tinymce.wp-editor .column-2-3 {
   border: 2px solid #666;
   border-radius: 4px;
@@ -296,7 +317,7 @@ body#tinymce.wp-editor .column-2-3:before {
   top: -15px;
   content: "2/3 Column";
 }
-/* line 50, ../scss/tinymce.scss */
+/* line 54, ../scss/tinymce.scss */
 body#tinymce.wp-editor .column-1-3 {
   border: 2px solid #666;
   border-radius: 4px;

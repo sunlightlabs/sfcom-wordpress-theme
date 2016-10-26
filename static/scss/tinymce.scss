@@ -35,6 +35,10 @@ body#tinymce.wp-editor {
     @include editor-label("Featured Video");
   }
 
+  .divider-title {
+    @include editor-label("Divider Title");
+  }
+
   .column-3-4 {
     @include editor-label("3/4 Column");
   }

@@ -9122,6 +9122,7 @@ button.close {
 /* line 156, ../scss/_shared-content.scss */
 .divider-title img {
   padding: 0;
+  vertical-align: middle;
 }
 
 /* line 8, ../scss/_content.scss */
