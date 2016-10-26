@@ -444,21 +444,19 @@ dl.single-line {
 
 }
 
-
-
-
-
-
-
 /* header titles */
 h1, h2, h3, h4 {
 	font-weight: normal;
 	color: #635f5c;
 }
-h1 {
+h1, .entry-title {
 	font-family: $font-serif;
 	font-size: 191.72%;
 	line-height: 33px;
+}
+.entry-title {
+	text-transform: none;
+	margin-bottom: 0;
 }
 h2 {
 	margin-bottom: 30px;
@@ -1926,16 +1924,25 @@ ul.initiatives {
 	padding-right: 0;
 	// width: 560px;
 }
-.blog.index .blog-content, .blog-preview .blog-content {
+.blog {
 	article {
 		background: url(../img/bg_blog_post_summary.png) left bottom no-repeat;
 		margin-bottom: 30px;
 		header {
-			margin-bottom: 20px;
+			margin-bottom: 15px;
 		}
+		.author {
+			margin-right: 10px;
+	    border-right: 1px solid #eceae3;
+	    padding-right: 10px;
+		}
+		.author,.channels,.published {
+			display: inline-block;
+		}
+
 		.splash {
 			width: 180px;
-			height: 180px;
+			max-height: 180px;
 			float: left;
 			margin-right: 20px;
 			margin-bottom: 20px;
@@ -1944,21 +1951,10 @@ ul.initiatives {
 			overflow: hidden;
 			position: relative;
 			background-size: cover;
-			.blog-preview & {
-				width: 80px;
-				height: 80px;
-				margin-right: 10px;
-				margin-bottom: 0;
-			}
+
 			img {
 				width: auto;
 				max-height: 180px;
-				opacity: 0;
-				-webkit-transform: translate(-50%, -50%);
-				-moz-transform: translate(-50%, -50%);
-				-ms-transform: translate(-50%, -50%);
-				-o-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
 			}
 		}
 		.entry-summary {
@@ -2039,11 +2035,12 @@ li.channel {
 }
 .channels {
 	list-style-type: none;
+	padding-left: 0;
 	margin: 0 10px 0 0;
 	border-right: 1px solid #eceae3;
 	height: 18px;
-	float: left;
 	padding-right: 10px;
+	display: inline-block;
 	&.roku {
 		float: none;
 	}
@@ -2246,9 +2243,6 @@ li.channel {
 			text-transform: inherit;
 		}
 		header {
-			position: relative;
-			margin-bottom: 30px;
-			padding-bottom: 16px;
 			h1, .meta {
 				padding-right: 20px;
 				box-sizing: border-box;
@@ -2257,10 +2251,6 @@ li.channel {
 			}
 			.meta {
 				margin-top: 8px;
-			}
-			time {
-				clear: right;
-				line-height: 1.7em;
 			}
 			.share-buttons {
 				right: 20px;

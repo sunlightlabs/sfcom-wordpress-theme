@@ -7,7 +7,7 @@
 	}
 ?>
 	<!-- index.php -->
-	<main role="main" class="has-sidebar">
+	<main role="main" class="has-sidebar blog">
 		<!-- section -->
 		<section>
 
@@ -34,31 +34,73 @@
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 				<!-- article -->
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('hentry'); ?>>
 
-					<!-- post thumbnail -->
-					<?php /* if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-						</a>
-					<?php endif; */ ?>
-					<!-- /post thumbnail -->
+					<header>
 
-					<!-- post title -->
-					<?php /*
-					<h2>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-					</h2-->
-					*/ ?>
-					<!-- /post title -->
+						<!-- post title -->
+						<h2 class="entry-title">
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+						</h2>
+						<!-- /post title -->
 
-					<!-- post details -->
-					<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-					<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-					<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-					<!-- /post details -->
 
-					<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+	          <div class="meta">
+	            <address class="author tip">
+	                by <?php the_author_posts_link(); ?>
+	            </address>
+
+							<?php $categories = wp_get_post_categories($post->ID, array('fields' => 'names')) ?>
+
+							<?php if($categories && array_intersect(array('Technology', 'Policy', 'Investigations', 'Multimedia'), $categories)) : ?>
+		            <ul class="channels">
+									<?php if(in_array('Technology', $categories)): ?>
+										<li class="channel technology textReplace">
+											<a href="/topics/channels/channel-technology/">technology</a>
+										</li>
+									<?php endif ?>
+									<?php if(in_array('Policy', $categories)): ?>
+										<li class="channel policy textReplace">
+											<a href="/topics/channels/channel-policy/">policy</a>
+										</li>
+									<?php endif ?>
+									<?php if(in_array('Investigations', $categories)): ?>
+										<li class="channel investigations textReplace">
+											<a href="/topics/channels/channel-investigations/">investigations</a>
+										</li>
+									<?php endif ?>
+									<?php if(in_array('Multimedia', $categories)): ?>
+										<li class="channel multimedia textReplace">
+											<a href="/topics/channels/channel-multimedia/">multimedia</a>
+										</li>
+									<?php endif ?>
+		            </ul>
+		          <?php endif; ?>
+	            <time datetime="<?php the_time('c'); ?> " class="published" pubdate="">
+	                <?php the_time('F j, Y g:i a'); ?>
+	            </time>
+		        </div>
+	        </header>
+
+			    <div class="postContent">
+						<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="splash">
+								<?php the_post_thumbnail(array(180,180)); ?>
+							</a>
+						<?php endif; ?>
+
+		        <div class="entry-summary ">
+		           <?php html5wp_excerpt('html5wp_index'); ?>
+
+		            <a class="more" href="<?php the_permalink(); ?>">Continue reading</a>
+		        </div>
+
+		        <div class="clear">
+			    </div>
+
+					<footer class="summary-footer clear">
+
+			    </footer>
 
 				</article>
 				<!-- /article -->
