@@ -1505,8 +1505,16 @@ iframe {
 	padding: 0 20px 20px 20px;
 	-webkit-box-shadow: 8px 8px 10px 0px rgba(153, 161, 161, .03);
 	box-shadow: 8px 8px 10px 0px rgba(153, 161, 161, .03);
-	margin: -21px 0 40px -11px;
+	margin-top: 20px;
+	margin-bottom: 50px;
 	z-index: 20;
+	.spotlight-title {
+		margin-left: 72px;
+		margin-bottom: 40px;
+		font-family: "rooney-web", "Georgia", "Times New Roman", "Times", serif;
+    font-size: 18px;
+    text-transform: uppercase;
+	}
 	.home & {
 		margin-bottom: -10px;
 		margin-left: -21px;
@@ -1928,6 +1936,10 @@ ul.initiatives {
 	article {
 		background: url(../img/bg_blog_post_summary.png) left bottom no-repeat;
 		margin-bottom: 30px;
+		&:last-child{
+			background: none;
+			margin-bottom: 0;
+		}
 		header {
 			margin-bottom: 15px;
 		}

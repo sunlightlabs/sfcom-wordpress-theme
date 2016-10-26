@@ -31,7 +31,18 @@
 				</ul>
 			</div>
 
+			<?php $has_sticky = false; $done = false;?>
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+				<?php if(is_sticky($post->ID)): ?>
+					<?php $has_sticky = true; ?>
+					<div class="spotlight">
+						<img class="spotlight-badge" src="/wp-content/themes/sfcom/img/badge_spotlight.png">
+						<h3 class="spotlight-title">Spotlight</h3>
+				<?php elseif($has_sticky && !$done): ?>
+					<?php $done = true; ?>
+					</div>
+				<?php endif ?>
 
 				<!-- article -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class('hentry'); ?>>
