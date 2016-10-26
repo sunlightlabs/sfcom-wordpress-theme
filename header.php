@@ -39,7 +39,7 @@
 		<!-- HTML5 shiv for IE versions < 9 -->
 		<!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/lib/bootstrap.min.js"></script>
+
 		<script src="//use.typekit.com/blp6kvr.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/brandingbar.css" />
