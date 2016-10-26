@@ -515,6 +515,12 @@ function html5_mce_before_init_insert_formats( $init_array ) {
             'block' => 'div'
         ),
         array(
+            'title' => 'Spotlight',
+            'classes' => 'spotlight',
+            'wrapper' => 'true',
+            'block' => 'div'
+        ),
+        array(
             'title' => 'Divider Title',
             'classes' => 'divider-title',
             'wrapper' => 'true',

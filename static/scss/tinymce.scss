@@ -31,6 +31,10 @@ body#tinymce.wp-editor {
     @include editor-label("Feature");
   }
 
+  .spotlight {
+     @include editor-label("Spotlight");
+  }
+
   .featuredVideo {
     @include editor-label("Featured Video");
   }

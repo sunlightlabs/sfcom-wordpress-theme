@@ -500,6 +500,12 @@ h1 a, h1 a:active, h1 a:visited, h2 a, h2 a:active, h2 a:visited, h3 a, h3 a:act
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
 	color: #b9a609;
 }
+
+%fancy-title {
+	font-size: 26px;
+	line-height: 33px;
+	font-family: "Georgia", "Times New Roman", "Times", serif;
+}
 .sectionHeader {
 	border-bottom: 1px dashed #d6d3d2;
 	padding-bottom: 5px;
@@ -1351,7 +1357,38 @@ div.pagination {
   @media (max-width: $screen-md-max) {
 		padding: 0;
 	}
+	.spotlight {
+		margin-top: -40px;
+	  margin-left: -40px;
+	}
 }
+
+.display-posts-listing {
+	padding-left: 0;
+	li {
+		list-style: none;
+		margin-bottom: 1rem;
+		.title {
+			display: block;
+			font-family: $font-frank;
+			font-size: 20px;
+			.spotlight & {
+				@extend %fancy-title;
+			}
+		}
+		.date {
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+		.excerpt-dash {
+			display: none;
+		}
+		.excerpt {
+			display: block;
+		}
+	}
+}
+
 
 .main-tagline {
 	@media (max-width: $screen-md-max) {
@@ -1499,8 +1536,21 @@ iframe {
 	}
 }
 .spotlight, .series-feature-list {
+	&::before {
+		content: " ";
+    height: 0;
+    width: 0;
+    padding-bottom: 71px;
+    padding-right: 87px;
+    position: relative;
+    top: -19px;
+    left: -42px;
+    border-radius: 50px;
+    border: 8px solid #fff;
+    background: transparent url(../img/badge_spotlight.png) top left no-repeat;
+	}
+	background-color: #f9f8f8;
 	position: relative;
-	background: #f9f8f8;
 	border: 1px solid #f0eded;
 	padding: 0 20px 20px 20px;
 	-webkit-box-shadow: 8px 8px 10px 0px rgba(153, 161, 161, .03);
@@ -1508,18 +1558,18 @@ iframe {
 	margin-top: 20px;
 	margin-bottom: 50px;
 	z-index: 20;
-	.spotlight-title {
+	& > *:first-child {
 		margin-left: 72px;
+		margin-top: 0;
+	}
+
+	.spotlight-title {
 		margin-bottom: 40px;
 		font-family: "rooney-web", "Georgia", "Times New Roman", "Times", serif;
     font-size: 18px;
     text-transform: uppercase;
 	}
-	.home & {
-		margin-bottom: -10px;
-		margin-left: -21px;
-		border-right: 1px solid #DFDCDA;
-	}
+
 	a {
 		.sidebar & {
 			border: none;
