@@ -37,7 +37,7 @@
 				<?php if(is_sticky($post->ID)): ?>
 					<?php $has_sticky = true; ?>
 					<div class="spotlight">
-						<img class="spotlight-badge" src="/wp-content/themes/sfcom/img/badge_spotlight.png">
+						<img class="spotlight-badge" src="<?php echo get_template_directory_uri(); ?>/img/badge_spotlight.png">
 						<h3 class="spotlight-title">Spotlight</h3>
 				<?php elseif($has_sticky && !$done): ?>
 					<?php $done = true; ?>
