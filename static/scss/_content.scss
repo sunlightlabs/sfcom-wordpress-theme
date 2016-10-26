@@ -4007,6 +4007,10 @@ footer #follow-buttons {
 	input[name=zipcode] {
 		width: 100px;
 	}
+	button[type=submit] {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 	@media (max-width: $screen-md-max) {
 		input[name=email] {
 			width: 100%;
