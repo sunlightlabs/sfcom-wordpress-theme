@@ -2033,11 +2033,10 @@ ul.initiatives {
 	}
 	.social-sharing {
 		color: #635f5c;
-
-    img {
-      max-width: none;
-    }
 	}
+  .addtoany_list img {
+    max-width: none;
+  }
 	@media (min-width: $screen-md-max) {
 		.author + *, .channels + * {
 	    border-left: 1px solid #eceae3;
