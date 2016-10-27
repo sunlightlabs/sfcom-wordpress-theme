@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 	<!-- team.php -->
-	<main role="main">
+	<main role="main" class="staff-page">
 		<!-- section -->
 		<section>
 
@@ -58,12 +58,13 @@
 						));
 
 						if ( $post_query->have_posts() ) {
-							echo '<ul class="hfeed bulleted">';
+
+							echo '<ul class="hfeed bulleted staff-blog-posts">';
 							while ( $post_query->have_posts() ) {
 								$post_query->the_post();
 
 								echo '<li class="hentry">
-    								<a href="'. get_the_permalink() .'" class="entry-title" rel="bookmark">'. get_the_title() .'</a>
+    								<a href="'. get_the_permalink() .'" class="title" rel="bookmark">'. get_the_title() .'</a>
     								<div class="entryMetaData">
     									<time datetime="'. get_the_time('c') .'" class="published" pubdate="">
     										'. get_the_time('F j, Y') .'

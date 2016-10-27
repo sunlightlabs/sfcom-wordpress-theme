@@ -1701,7 +1701,7 @@ p.intro, .intro p {
 
 .staffHeader {
   min-height: 110px;
-	padding-top: 35px;
+	// padding-top: 35px;
 	margin-bottom: 30px;
 
 	.imgWrapper {
@@ -1721,6 +1721,17 @@ p.intro, .intro p {
 }
 .staffPhoto span.tip {
 	border-right: none;
+}
+.staff-page {
+  .sidebar {
+
+  }
+}
+.staff-blog-posts {
+  padding-left: 0;
+  li {
+    margin-bottom: 14px;
+  }
 }
 
 #followBtn {
