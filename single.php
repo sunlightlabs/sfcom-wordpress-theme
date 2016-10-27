@@ -1,33 +1,32 @@
 <?php get_header(); ?>
 	<!-- single.php -->
-	<main role="main">
+	<main role="main" class="has-sidebar">
 	<!-- section -->
 	<section>
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
+			<header>
+				<!-- post title -->
+				<h1>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				</h1>
+				<!-- /post title -->
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+				<!-- post details -->
+				<div class="meta">
+					<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
+					<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
+					<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+				</div>
+				<!-- /post details -->
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
-
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
+				<div class="social-sharing">
+					Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+				</div>
+			</header>
 
 			<?php the_content(); // Dynamic Content ?>
 
@@ -37,9 +36,11 @@
 
 			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+			<footer>
+				Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+			</footer>
 
-			<?php comments_template(); ?>
+			<?php /* comments_template(); */ ?>
 
 		</article>
 		<!-- /article -->

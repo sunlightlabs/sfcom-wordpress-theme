@@ -2044,6 +2044,22 @@ ul.initiatives {
 		}
 	}
 }
+.blog-post {
+	header {
+		margin-bottom: 15px;
+	}
+	.meta {
+		display: inline-block;
+	}
+	.social-sharing {
+		float: right;
+	}
+	@media (max-width: $screen-md-max) {
+		img {
+			max-width: 100%;
+		}
+	}
+}
 .blog-preview {
 	.blog-content article .splash {
 		width: 80px;

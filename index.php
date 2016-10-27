@@ -44,7 +44,7 @@
 				<?php endif ?>
 
 				<!-- article -->
-				<article id="post-<?php the_ID(); ?>" <?php post_class('hentry'); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class('hentry blog-post'); ?>>
 
 					<header>
 
@@ -109,7 +109,7 @@
 			    </div>
 
 					<footer class="summary-footer clear">
-
+						Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 			    </footer>
 
 				</article>
