@@ -1082,53 +1082,7 @@ div.pagination {
 		}
 	}
 
-/* Social Media icons */
-#shareBtns {
-	float: right;
-	clear: right;
-	margin-top: 10px;
-}
-#shareBtns li {
-	width: 16px;
-	height: 16px;
-	float: right;
-	margin-right: 10px;
-}
-#shareBtns li a {
-	width: 16px;
-	height: 16px;
-}
-#facebook a {
-	background: url(../img/social_sprites.png) left -188px no-repeat;
-}
-#facebook a:hover {
-	background: url(../img/social_sprites.png) left -52px no-repeat;
-}
-#twitter a {
-	background: url(../img/social_sprites.png) left -103px no-repeat;
-}
-#twitter a:hover {
-	background: url(../img/social_sprites.png) left -1px no-repeat;
-}
-#twitter a {
-	background: url(../img/social_sprites.png) left -103px no-repeat;
-}
-#twitter a:hover {
-	background: url(../img/social_sprites.png) left -1px no-repeat;
-}
-#youTube a {
-	background: url(../img/social_sprites.png) left -137px no-repeat;
-}
-#youTube a:hover {
-	background: url(../img/social_sprites.png) left -86px no-repeat;
-}
-#mainHeader #follow-buttons [class^="sficon-"], #mainHeader #follow-buttons [class*=" sficon-"] {
-	font-size: 24px;
-	margin-left: 10px;
-}
-#mainHeader #follow-buttons .sficon-tumblr {
-	margin-left: 4px;
-}
+
 .sficon-facebook, .sficon-facebook-alt {
 	color: rgb(59, 89, 152);
 	&:hover {
@@ -2079,6 +2033,10 @@ ul.initiatives {
 	}
 	.social-sharing {
 		color: #635f5c;
+
+    img {
+      max-width: none;
+    }
 	}
 	@media (min-width: $screen-md-max) {
 		.author + *, .channels + * {
@@ -2368,12 +2326,7 @@ li.channel {
 			.meta {
 				margin-top: 8px;
 			}
-			.share-buttons {
-				right: 20px;
-				bottom: -38px;
-				position: absolute;
-				z-index: 1000;
-			}
+
 		}
 	}
 }
@@ -2526,55 +2479,6 @@ li.channel {
 				margin-left: 38px;
 			}
 		}
-	}
-}
-.share-buttons {
-	position: absolute;
-}
-.social {
-	height: 30px;
-	list-style-type: none;
-	margin-left: 0;
-	li {
-		display: inline;
-	}
-	.icon {
-		float: left;
-		background-image: url(../img/social_share_sprites.png);
-		background-repeat: no-repeat;
-		height: 25px;
-		display: block;
-	}
-	.fbook .icon {
-		background-position: left bottom;
-		width: 22px;
-		&:hover {
-			background-position: right bottom;
-		}
-	}
-	.twit .icon {
-		background-position: left top;
-		width: 22px;
-		&:hover {
-			background-position: right top;
-		}
-	}
-	.gplus .icon {
-		background-position: left center;
-		width: 22px;
-		&:hover {
-			background-position: right center;
-		}
-	}
-	.counter {
-		float: left;
-		border-right: 1px solid #f6f5f3;
-		min-width: 6px;
-		background: url(../img/social_counter.png) left center no-repeat;
-		height: 21px;
-		display: block;
-		font-size: 80%;
-		padding: 3px 7px 3px 12px;
 	}
 }
 
