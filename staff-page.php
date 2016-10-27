@@ -47,42 +47,42 @@
 					<?php the_content(); ?>
 
 				</div>
-				<div class="col-md-4 sidebar">
-					<h3>Recent blog contributions from <?php the_title() ?></h3>
+				<?php if($meta['username'] && $meta['username'][0]) : ?>
+					<div class="col-md-4 sidebar">
+						<h3>Recent blog contributions from <?php the_title() ?></h3>
 
-					<?php
-						// Get 5 posts by this author.
-						$post_query = new WP_Query(array(
-							'author_name' => $meta['username'][0],
-							'posts_per_page' => 5
-						));
+						<?php
+							// Get 5 posts by this author.
+							$post_query = new WP_Query(array(
+								'author_name' => $meta['username'][0],
+								'posts_per_page' => 5
+							));
 
-						if ( $post_query->have_posts() ) {
+							if ( $post_query->have_posts() ) {
 
-							echo '<ul class="hfeed bulleted staff-blog-posts">';
-							while ( $post_query->have_posts() ) {
-								$post_query->the_post();
+								echo '<ul class="hfeed bulleted staff-blog-posts">';
+								while ( $post_query->have_posts() ) {
+									$post_query->the_post();
 
-								echo '<li class="hentry">
-    								<a href="'. get_the_permalink() .'" class="title" rel="bookmark">'. get_the_title() .'</a>
-    								<div class="entryMetaData">
-    									<time datetime="'. get_the_time('c') .'" class="published" pubdate="">
-    										'. get_the_time('F j, Y') .'
-    									</time>
-    								</div>
-    							</li>';
+									echo '<li class="hentry">
+											<a href="'. get_the_permalink() .'" class="title" rel="bookmark">'. get_the_title() .'</a>
+											<div class="entryMetaData">
+												<time datetime="'. get_the_time('c') .'" class="published" pubdate="">
+													'. get_the_time('F j, Y') .'
+												</time>
+											</div>
+										</li>';
+								}
+								echo '</ul>';
+
+								echo '<a href="/blog/author/'. $meta['username'][0] .'/">Read more posts by this author.</a>';
+								/* Restore original Post Data */
+
 							}
-							echo '</ul>';
-
-							echo '<a href="/blog/author/'. $meta['username'][0] .'/">Read more posts by this author.</a>';
-							/* Restore original Post Data */
-
-						}
-						wp_reset_postdata();
-					?>
-				</div>
-
-
+							wp_reset_postdata();
+						?>
+					</div>
+				<?php endif ?>
 			</article>
 
 			<?php edit_post_link(); ?>
