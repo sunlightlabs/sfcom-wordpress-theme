@@ -294,6 +294,29 @@ function remove_thumbnail_dimensions( $html )
     return $html;
 }
 
+function category_icons($post = null) {
+    if(!$post) {
+        global $post;
+    }
+    $categories = wp_get_post_categories($post->ID, array('fields' => 'names'));
+
+    $fixed_categories = array('Technology', 'Policy', 'Investigations', 'Multimedia');
+
+    if($categories && array_intersect($fixed_categories, $categories)) {
+        print '<ul class="channels">';
+        foreach($fixed_categories as $category) {
+            $lower_category = strtolower($category);
+            if(in_array($category, $categories)) {
+                print '<li class="channel '.$lower_category.' technology textReplace">
+                    <a href="/topics/channels/channel-'.$lower_category.'/">'.$lower_category.'</a>
+                </li>';
+            }
+        }
+        print '</ul>';
+    }
+}
+
+
 // Custom Gravatar in Settings > Discussion
 function html5blankgravatar ($avatar_defaults)
 {

@@ -1,67 +1,73 @@
 <?php get_header(); ?>
-	<!-- single.php -->
-	<main role="main" class="has-sidebar">
-	<!-- section -->
-	<section>
+  <!-- single.php -->
+  <main role="main" class="has-sidebar">
+  <!-- section -->
+  <section>
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
-			<header>
-				<!-- post title -->
-				<h1>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h1>
-				<!-- /post title -->
+    <!-- article -->
+    <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
+      <header>
+        <!-- post title -->
+        <h1>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+        </h1>
+        <!-- /post title -->
 
-				<!-- post details -->
-				<div class="meta">
-					<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-					<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-					<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-				</div>
-				<!-- /post details -->
+        <!-- post details -->
+        <div class="meta">
+          <span class="author tip">
+              by <?php the_author_posts_link(); ?>
+          </span>
 
-				<div class="social-sharing">
-					Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
-				</div>
-			</header>
+          <?php category_icons() ?>
 
-			<?php the_content(); // Dynamic Content ?>
+          <time datetime="<?php the_time('c'); ?> " class="published" pubdate="">
+              <?php the_time('M j, Y g:i a'); ?>
+          </time>
+        </div>
+        <!-- /post details -->
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+        <div class="social-sharing">
+          Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+        </div>
+      </header>
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+      <?php the_content(); // Dynamic Content ?>
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+      <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
-			<footer>
-				Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
-			</footer>
+      <p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
 
-			<?php /* comments_template(); */ ?>
+      <p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
 
-		</article>
-		<!-- /article -->
+      <footer>
+        Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+      </footer>
 
-	<?php endwhile; ?>
+      <?php /* comments_template(); */ ?>
 
-	<?php else: ?>
+    </article>
+    <!-- /article -->
 
-		<!-- article -->
-		<article>
+  <?php endwhile; ?>
 
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+  <?php else: ?>
 
-		</article>
-		<!-- /article -->
+    <!-- article -->
+    <article>
 
-	<?php endif; ?>
+      <h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
 
-	</section>
-	<!-- /section -->
-	</main>
+    </article>
+    <!-- /article -->
+
+  <?php endif; ?>
+
+  </section>
+  <!-- /section -->
+  </main>
 
 <?php get_sidebar(); ?>
 
