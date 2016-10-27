@@ -1985,9 +1985,15 @@ ul.initiatives {
 	// width: 560px;
 }
 .blog {
+	.spotlight {
+		article {
+			padding-bottom: 0px;
+		}
+	}
 	article {
 		background: url(../img/bg_blog_post_summary.png) left bottom no-repeat;
 		margin-bottom: 30px;
+    padding-bottom: 70px;
 		&:last-child{
 			background: none;
 			margin-bottom: 0;
@@ -1995,12 +2001,11 @@ ul.initiatives {
 		header {
 			margin-bottom: 15px;
 		}
-		.splash {
+		.feature-photo img {
 			width: 180px;
 			max-height: 180px;
 			float: left;
-			margin-right: 20px;
-			margin-bottom: 20px;
+			margin: 0 20px 0 0;
 			border: 5px solid #e3dfdf;
 			text-align: center;
 			overflow: hidden;
@@ -2012,13 +2017,20 @@ ul.initiatives {
 				max-height: 180px;
 			}
 		}
-		.entry-summary {
-			margin-right: 40px;
-		}
-		.entry-summary.noimg {
-			margin-left: 37px;
-			padding-left: 20px;
-			background: url(../img/bg_blognoimg.png) left bottom no-repeat;
+		@media (min-width: $screen-md-max) {
+			.entry-summary {
+				margin-right: 40px;
+			}
+			.entry-summary {
+				margin-left: 37px;
+				padding-left: 20px;
+				background: url(../img/bg_blognoimg.png) left bottom no-repeat;
+			}
+			.feature-photo + .entry-summary {
+				margin-left: 10px;
+				padding-left: 0;
+				background: none;
+			}
 		}
 		.more {
 			font-family: $font-serif;
@@ -2039,6 +2051,11 @@ ul.initiatives {
 .blog-post {
 	header {
 		margin-bottom: 15px;
+	}
+	.entry-title {
+    font-family: "Georgia", "Times New Roman", "Times", serif;
+    font-size: 26px;
+    line-height: 1.2;
 	}
 	.meta {
 		display: inline-block;
@@ -2075,12 +2092,12 @@ ul.initiatives {
 	}
 }
 .blog-preview {
-	.blog-content article .splash {
-		width: 80px;
-		height: 80px;
-		margin-right: 10px;
-		margin-bottom: 0;
-	}
+	// .blog-content article .feature-photo {
+	// 	width: 80px;
+	// 	height: 80px;
+	// 	margin-right: 10px;
+	// 	margin-bottom: 0;
+	// }
 	h1.h4 {
 		font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	}
@@ -2301,7 +2318,6 @@ li.channel {
 	article {
 		h2 {
 			font-size: 157.76%;
-			margin-bottom: 20px;
 			line-height: 1.2;
 			text-transform: inherit;
 			font-family: $font-sans;

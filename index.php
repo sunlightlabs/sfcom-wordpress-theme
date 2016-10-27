@@ -67,7 +67,7 @@
 
           <div class="postContent">
             <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="splash">
+              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="feature-photo">
                 <?php the_post_thumbnail(array(180,180)); ?>
               </a>
             <?php endif; ?>
