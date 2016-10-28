@@ -133,13 +133,7 @@ body#tinymce.wp-editor .main-tagline {
   max-width: none;
   font-size: 39px;
 }
-/* line 126, ../scss/_shared-content.scss */
-body#tinymce.wp-editor .main-tagline:after {
-  content: " .";
-  color: #C9A706;
-  font-weight: 400;
-}
-/* line 133, ../scss/_shared-content.scss */
+/* line 127, ../scss/_shared-content.scss */
 body#tinymce.wp-editor .divider-title {
   height: 82px;
   width: 100%;
@@ -167,12 +161,12 @@ body#tinymce.wp-editor .divider-title {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
   /* IE6-9 */
 }
-/* line 152, ../scss/_shared-content.scss */
+/* line 146, ../scss/_shared-content.scss */
 body#tinymce.wp-editor .divider-title * {
   background: #ffffff;
   padding: 0 10px;
 }
-/* line 156, ../scss/_shared-content.scss */
+/* line 150, ../scss/_shared-content.scss */
 body#tinymce.wp-editor .divider-title img {
   padding: 0;
   vertical-align: middle;
