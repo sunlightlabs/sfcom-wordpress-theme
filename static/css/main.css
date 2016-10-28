@@ -14967,13 +14967,15 @@ body.crp_report .selected {
   font-weight: bold;
 }
 
-/* line 4835, ../scss/_content.scss */
-.opendataguidelines .page ol {
+/* line 4836, ../scss/_content.scss */
+.opendataguidelines .page ol,
+.parent-opendataguidelines .page ol {
   padding-left: 0;
   list-style: none;
 }
-/* line 4839, ../scss/_content.scss */
-.opendataguidelines .page li {
+/* line 4840, ../scss/_content.scss */
+.opendataguidelines .page li,
+.parent-opendataguidelines .page li {
   margin-bottom: 1rem;
 }
 
