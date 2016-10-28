@@ -75,7 +75,7 @@
 								}
 								echo '</ul>';
 
-								echo '<a href="/?author_name='. $meta['username'][0] .'/">Read more posts by this author.</a>';
+								echo '<a href="/author/'. $meta['username'][0] .'/">Read more posts by this author.</a>';
 								/* Restore original Post Data */
 
 							}
