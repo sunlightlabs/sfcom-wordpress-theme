@@ -38,6 +38,10 @@ li {
 small, .small {
 	font-size: 90%;
 }
+td,
+th {
+  padding: 5px 10px;
+}
 #container {
 	background: url(../img/bg_interior.jpg) top left no-repeat;
 	margin: 0 auto;
