@@ -18,7 +18,13 @@
         <!-- post details -->
         <div class="meta">
           <span class="author tip">
-              by <?php the_author_posts_link(); ?>
+              by <?php
+                      if ( function_exists( 'coauthors_posts_links' ) ) {
+                          coauthors_posts_links();
+                      } else {
+                          the_author_posts_link();
+                      }
+                   ?>
           </span>
 
           <?php category_icons() ?>
