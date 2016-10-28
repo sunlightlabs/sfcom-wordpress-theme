@@ -14967,6 +14967,12 @@ body.crp_report .selected {
   font-weight: bold;
 }
 
+/* line 4835, ../scss/_content.scss */
+.opendataguidelines .page ol {
+  padding-left: 0;
+  list-style: none;
+}
+
 /* Necessary Elements from other Olivia files */
 /* line 10, ../scss/_donate.scss */
 .bb-strong, .bb-modal--title {
