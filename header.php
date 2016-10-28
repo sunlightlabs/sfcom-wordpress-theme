@@ -31,7 +31,6 @@
 		<!-- rss feeds -->
 		<link rel="alternate" type="application/rss+xml" title="Sunlight Foundation Blog Feed" href="http://sunlightfoundation.com/blog/rss/" />
 		<!-- stylesheets -->
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/static/css/main.css" />
 
 		<script src="<?php echo get_template_directory_uri(); ?>/highlight.min.js"></script>
 
