@@ -891,7 +891,6 @@ body.home header {
 /* Social Navigation */
 .social-nav {
   display: inline;
-	font-size: 0;
 	padding-left: 0;
 
 	li {
@@ -899,37 +898,47 @@ body.home header {
 		display: inline;
 		margin-left: 10px;
 	}
-	li::before {
+	a::before {
 		font-size: 24px;
 	}
-	.link-facebook {
+
+  a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+	.link-facebook a {
 		@extend .sficon-facebook;
 	}
-	.link-twitter {
+	.link-twitter a {
 		@extend .sficon-twitter;
 	}
-	.link-github {
+	.link-github a {
 		@extend .sficon-github;
 	}
-	.link-tumblr {
+	.link-tumblr a {
 		@extend .sficon-tumblr;
 	}
-	.link-instagram {
+	.link-instagram a {
 		@extend .sficon-instagram;
 	}
-	.link-linkedin {
+	.link-linkedin a {
 		@extend .sficon-linkedin;
 	}
-	.link-flickr {
+	.link-flickr a {
 		@extend .sficon-flickr;
 	}
-	.link-youtube {
+	.link-youtube a {
 		@extend .sficon-youtube;
 	}
 }
 
-footer .social-nav li {
+footer .social-nav li a {
 	color: $white !important;
+  height: 17px;
+  width: 14px;
 	&:hover {
 		color: #78bcbf !important;
 	}
