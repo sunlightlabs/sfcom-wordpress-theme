@@ -778,7 +778,6 @@ body.home header {
   font-family: "adrianna-condensed","Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 118%;
   font-weight: normal;
-  height: 60px;
   text-align: center;
   text-transform: uppercase;
 	padding: 22px 15px;
@@ -839,6 +838,7 @@ body.home header {
 		}
 	}
 	.dropdown-menu {
+    float: none;
 		display: block;
 		position: static;
 		background-image: none;
@@ -982,20 +982,10 @@ body.contact footer .nav .contact, body.about footer .nav .about {
 body.missionBody .about1, body.board .about2, body.disclosures .about-disclosures, body.grants .about-grants, body.funding .about4, body.jobs .about5, body.experts .experts, body.releases .releases, body.multimedia .multimedia, body.oped .oped, body.editorials .editorials, body.articles .articles, body.logos .logos, body.tools .tools, body.overview .overview, body.agenda .agenda, body.lobbying .lobbying, body.disclosingmoney .disclosingmoney, body.federal .federal, body.international .international, body.local .local, body.documents .documents, body.success .success, body.opendata .opendata, body.staff .about3, body.overview .overview, body.apis .apis, body.community .community, body.events .events, body.usage .usage, body.terms .terms, body.analytics .analytics, body.keys .keys, body.leaderboard .leaderboard {
 	background: url(../img/bg_arrowActive.png) center bottom no-repeat;
 }
-
-/* Specifically to change the color of the link (Intended style was getting overidden with more specificity somewhere else.) */
-body.missionBody .dropdown-menu li .about1, body.board .dropdown-menu li.about2 > a, body.disclosures .dropdown-menu li.about-disclosures > a, body.grants .dropdown-menu li.about-grants > a, body.funding .dropdown-menu li.about4 > a, body.jobs .dropdown-menu li.about5 > a, body.experts .dropdown-menu li.experts > a, body.releases .dropdown-menu li.releases > a, body.multimedia .dropdown-menu li.multimedia > a, body.oped .dropdown-menu li.oped > a, body.editorials .dropdown-menu li.editorials > a, body.articles .dropdown-menu li.articles > a, body.logos .dropdown-menu li.logos > a, body.tools .dropdown-menu li.tools > a, body.overview .dropdown-menu li.overview > a, body.agenda .dropdown-menu li.agenda > a, body.lobbying .dropdown-menu li.lobbying > a, body.disclosingmoney .dropdown-menu li.disclosingmoney > a, body.federal .dropdown-menu li.federal > a, body.international .dropdown-menu li.international > a, body.local .dropdown-menu li.local > a, body.documents .dropdown-menu li.documents > a, body.success .dropdown-menu li.success > a, body.opendata .dropdown-menu li.opendata > a, body.staff .dropdown-menu li.about3 > a, body.overview .dropdown-menu li.overview > a, body.apis .dropdown-menu li.apis > a, body.community .dropdown-menu li.community > a, body.events .dropdown-menu li.events > a, body.analytics .dropdown-menu li.analytics > a, body.usage .dropdown-menu li.usage > a, body.terms .dropdown-menu li.terms > a, body.keys .dropdown-menu li.keys > a, body.leaderboard .dropdown-menu li.leaderboard > a {
-	color: #B9A609;
-}
-body.about .nav .about a, body.blog .nav .blog a, body.issues .nav .issues a, body.press .nav .press a, body.projects .nav .projects a, body.participate .nav .participate a, body.contact .nav .contact a, body.policy .nav .policy a, body.api .nav .api a {
-	color: #B9A609;
-	margin-bottom: 0;
-	margin-top: 3px;
-}
 div.pagination {
 	padding-top: 2em;
 }
-#dontateBlock {
+#donateBlock {
 	background: url(../img/bg_donate.png) right 5px no-repeat;
 	float: right;
 	height: 118px;
