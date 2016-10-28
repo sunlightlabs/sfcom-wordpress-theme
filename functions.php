@@ -143,6 +143,18 @@ function add_slug_to_body_class($classes)
         $classes[] = sanitize_html_class($post->post_name);
     }
 
+    if($post->post_parent) {
+        // Get the parent
+        $parent = get_post($post->post_parent);
+        $classes[] = 'parent-'.$parent->post_name;
+
+        // Get the grandparent, but no further.
+        if($parent->post_parent) {
+            $grandparent = get_post($parent->post_parent);
+            $classes[] = 'grandparent-'.$grandparent->post_name;
+        }
+    }
+
     return $classes;
 }
 
