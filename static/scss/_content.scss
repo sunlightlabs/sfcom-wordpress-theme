@@ -2954,23 +2954,21 @@ article.press-release header {
 article.press-release h3, article.press-release h4 {
 	margin-bottom: 0.5em;
 }
-.articlesSection {
-	background: url(../img/bg_pressArticles.png) left top no-repeat;
-	padding: 20px 0 20px 100px;
+
+@mixin metaSection($img) {
+	background: url($img) left top no-repeat;
+	padding: 30px 0 30px 100px;
 	margin-left: -15px;
 	min-height: 60px;
+}
+.articlesSection {
+	@include metaSection("../img/bg_pressArticles.png");
 }
 .releasesSection {
-	background: url(../img/bg_pressReleases.png) left top no-repeat;
-	padding: 20px 0 20px 100px;
-	margin-left: -15px;
-	min-height: 60px;
+	@include metaSection("../img/bg_pressReleases.png");
 }
 .featuredSection {
-	background: url(../img/bg_featured.png) left top no-repeat;
-	padding: 20px 0 20px 100px;
-	margin-left: -15px;
-	min-height: 60px;
+	@include metaSection("../img/bg_featured.png");
 }
 
 /* Press */
