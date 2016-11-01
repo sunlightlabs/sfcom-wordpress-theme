@@ -170,7 +170,7 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
+        'name' => __('Sidebar Widget Top', 'html5blank'),
         'description' => __('Top Sidebar Widget', 'html5blank'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
@@ -181,9 +181,20 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
-        'name' => __('Widget Area 2', 'html5blank'),
+        'name' => __('Sidebar Widget Bottom', 'html5blank'),
         'description' => __('Bottom Sidebar Widget', 'html5blank'),
         'id' => 'widget-area-2',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    // Media Sidebar
+    register_sidebar(array(
+        'name' => __('Sidebar Media', 'html5blank'),
+        'description' => __('Sidebar for Media Template pages.', 'html5blank'),
+        'id' => 'sidebar-widget-media',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',

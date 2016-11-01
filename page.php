@@ -1,3 +1,8 @@
+<?php
+if(!isset($sidebar_name)) {
+	$sidebar_name = false;
+}
+?>
 <?php get_header(); ?>
 	<!-- page-nosidebar.php -->
 	<main role="main" class="has-sidebar">
@@ -36,6 +41,6 @@
 		<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+<?php get_sidebar($sidebar_name); ?>
 
 <?php get_footer(); ?>
