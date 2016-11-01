@@ -3994,7 +3994,7 @@ footer #follow-buttons {
 		font-style: oblique;
 		margin-right: 10px;
 	}
-	input[name=email] {
+	input[type=email] {
 		width: 180px;
 	}
 	input[name=zipcode] {
@@ -4005,7 +4005,7 @@ footer #follow-buttons {
 		padding-bottom: 5px;
 	}
 	@media (max-width: $screen-sm-min) {
-		input[name=email] {
+		input[type=email] {
 			width: 100%;
 			margin-bottom: 5px;
 		}

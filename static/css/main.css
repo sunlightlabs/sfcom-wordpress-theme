@@ -13955,7 +13955,7 @@ footer #follow-buttons h4 {
   margin-right: 10px;
 }
 /* line 3997, ../scss/_content.scss */
-.signupRibbon input[name=email] {
+.signupRibbon input[type=email] {
   width: 180px;
 }
 /* line 4000, ../scss/_content.scss */
@@ -13969,7 +13969,7 @@ footer #follow-buttons h4 {
 }
 @media (max-width: 768px) {
   /* line 4008, ../scss/_content.scss */
-  .signupRibbon input[name=email] {
+  .signupRibbon input[type=email] {
     width: 100%;
     margin-bottom: 5px;
   }
