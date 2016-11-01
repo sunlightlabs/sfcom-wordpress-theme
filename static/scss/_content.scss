@@ -989,17 +989,7 @@ ul.expert {
 		padding: 1px;
 	}
 }
-body.blog .nav .blog, body.projects .nav .projects, body.participate .nav .participate, body.contact .nav .contact, body.issues .nav .issues {
-	background: url(../img/bg_arrowActive.png) center bottom no-repeat;
-	color: #B9A609;
-}
-body.contact footer .nav .contact, body.about footer .nav .about {
-	background: none;
-	color: #B9A609;
-	a {
-		color: #ffffff;
-	}
-}
+
 body.missionBody .about1, body.board .about2, body.disclosures .about-disclosures, body.grants .about-grants, body.funding .about4, body.jobs .about5, body.experts .experts, body.releases .releases, body.multimedia .multimedia, body.oped .oped, body.editorials .editorials, body.articles .articles, body.logos .logos, body.tools .tools, body.overview .overview, body.agenda .agenda, body.lobbying .lobbying, body.disclosingmoney .disclosingmoney, body.federal .federal, body.international .international, body.local .local, body.documents .documents, body.success .success, body.opendata .opendata, body.staff .about3, body.overview .overview, body.apis .apis, body.community .community, body.events .events, body.usage .usage, body.terms .terms, body.analytics .analytics, body.keys .keys, body.leaderboard .leaderboard {
 	background: url(../img/bg_arrowActive.png) center bottom no-repeat;
 }
@@ -1718,31 +1708,7 @@ p.intro, .intro p {
 	margin-left: 85px;
 }
 
-.contactPaper {
-	background: #fff url(../img/bg_foldedCorner.png) right top no-repeat;
-	border: 1px solid #eceae3;
-	border-radius: 0 30px 0 0;
-	padding: 40px 30px 50px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	form{
-		margin-top: 60px;
-	}
-	fieldset {
-		margin-bottom: 30px;
-	}
-	ul input {
-		display: inline;
-	}
-	h2{
-		border-bottom: 1px solid $darkgrey;
-		padding-bottom: 10px;
-	}
-}
-.contactPaper-sidebar {
-	padding: 40px 30px 50px;
-}
+
 .standard-form {
 	label {
 		float: left;
@@ -1782,6 +1748,9 @@ p.intro, .intro p {
 		color: #900;
 		font-weight: bold;
 	}
+}
+.contact textarea {
+	min-height: 15em;
 }
 ul.errorlist li {
 	color: #900;
