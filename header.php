@@ -60,12 +60,7 @@
 								)
 							) ?>
 						</div>
-						<form action="/search/" method="get" id="mainsearch" class="searchform globalsearch">
-							<input class="transparent" type="search" name="q" id="id_q" placeholder="search the site">
-							<button class="textReplace" type="submit">
-								 <span>Search</span>
-							</button>
-						</form>
+						<?php get_search_form(); ?>
 					</div>
 					<div class="clearfix"></div>
 

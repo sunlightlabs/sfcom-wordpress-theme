@@ -628,7 +628,7 @@ body.home header {
     margin-top: 50px;
   }
 }
-.searchform.globalsearch{
+.search{
 	position: relative;
 	@media (max-width: $screen-sm-min) {
 		width: 100%;
@@ -668,7 +668,7 @@ body.home header {
 		}
 	}
 }
-.searchform {
+.search {
 	margin: 70px 5px 0 0;
 	height: 18px;
 	float: right;
@@ -676,7 +676,7 @@ body.home header {
 		margin: 36px 0 0;
 	}
 }
-.searchform input[type="search"] {
+.search input[type="search"] {
 	border-top: 0;
 	width: 215px;
 	font-size: 120%;
@@ -688,6 +688,18 @@ body.home header {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+.search button {
+	background: url(../img/btn_search.png) top left no-repeat;
+	padding-left: 20px;
+  padding-right: 0;
+	width: 0px;
+	height: 24px;
+	overflow: hidden;
+	left: -44px;
+	position: relative;
+	top: 0px;
+	border: none;
 }
 .loginlinks {
 	text-align: right;
@@ -1621,17 +1633,7 @@ iframe {
 	z-index: 50;
 }
 
-
-
 /* buttons */
-.searchform button {
-	background: url(../img/btn_search.png) top left no-repeat;
-	width: 21px;
-	height: 20px;
-	left: 180px;
-	position: relative;
-	top: -40px;
-}
 #dontateBlock a.btn {
 	font-size: 180%;
 	clear: right;
@@ -3333,12 +3335,6 @@ body.community {
 		display: block;
 		float: left;
 		margin-top: 3px;
-	}
-	.projects .searchform, .community .projects .filters {
-		float: right;
-	}
-	.projects .searchform {
-		margin-top: -5px;
 	}
 	.projects .filters {
 		// width: 430px;
