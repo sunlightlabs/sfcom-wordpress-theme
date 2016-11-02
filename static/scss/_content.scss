@@ -473,11 +473,11 @@ h2 {
 	line-height: 45px;
 	// max-width: 600px;
 	font-weight: 300;
-  font-family: "prenton-condensed","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: $font-prenton;
 }
 h3 {
 	// max-width: 650px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: $font-serif;
 }
 h3, .h2 {
 	margin-bottom: 25px;
@@ -513,7 +513,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
 %fancy-title {
 	font-size: 26px;
 	line-height: 33px;
-	font-family: "Georgia", "Times New Roman", "Times", serif;
+	font-family: $font-serif;
 }
 .sectionHeader {
 	border-bottom: 1px dashed #d6d3d2;
@@ -607,7 +607,7 @@ body.home header {
 	padding-left: 10px;
 	h4 {
 		display: inline-block;
-		font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: $font-prenton;
 		color: #635F5C;
 		font-size: 17px;
 		font-weight: 300;
@@ -700,7 +700,7 @@ body.home header {
 		font-size: 17px;
 		text-transform: uppercase;
 		font-weight: 300;
-		font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: $font-prenton;
 
 	}
 	a {
@@ -1289,7 +1289,7 @@ div.pagination {
 		clear: both;
 		li a span {
 			color: #BAB2AB;
-			font-family: "Georgia", "Times New Roman", "Times", serif;
+			font-family: $font-serif;
 			font-style: italic;
 			width: 18px;
 			display: inline-block;
@@ -1472,7 +1472,7 @@ iframe {
 		}
 	}
 	 h3 {
-		font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family:$font-prenton;
 		color: #000;
 		font-size: 30px;
 		font-weight: 300;
@@ -1490,7 +1490,7 @@ iframe {
 	color: #78bcbf;
 	span {
 		background: #f9f8f8;
-		font-family: "Georgia", "Times New Roman", "Times", serif;
+		font-family: $font-serif;
 		font-style: oblique;
 		font-size: 130%;
 		padding: 0 8px;
@@ -1526,7 +1526,7 @@ iframe {
 
 	.spotlight-title {
 		margin-bottom: 40px;
-		font-family: "rooney-web", "Georgia", "Times New Roman", "Times", serif;
+		font-family: "rooney-web", $font-serif;
     font-size: 18px;
     text-transform: uppercase;
 	}
@@ -1674,7 +1674,7 @@ p.intro, .intro p {
 	.staffTitle {
 		margin: 7px 0;
 		display: inline-block;
-		font-family: "Georgia", "Times New Roman", "Times", serif;
+		font-family: $font-serif;
 		font-style: oblique;
 	}
 }
@@ -1813,7 +1813,7 @@ ul.initiatives {
 			}
 			span {
 				background: #ffffff;
-				font-family: "Georgia", "Times New Roman", "Times", serif;
+				font-family: $font-serif;
 				font-style: oblique;
 				font-size: 130%;
 				padding: 0 8px;
@@ -2002,7 +2002,7 @@ ul.initiatives {
 		margin-bottom: 15px;
 	}
 	.entry-title {
-    font-family: "Georgia", "Times New Roman", "Times", serif;
+    font-family: $font-serif;
     font-size: 26px;
     line-height: 1.2;
 	}
@@ -2832,6 +2832,121 @@ table .sorting_desc {
 .grants .interjection p {
 	float: left;
 }
+
+// Donate
+.give-donation-levels-wrap,
+#give-payment-mode-select,
+#give_purchase_form_wrap {
+	@extend .row;
+
+}
+
+.give-currency-symbol {
+	float: left;
+  display: block;
+  padding-top: 35px;
+	font-size: 16px;
+	font-family: $font-serif;
+	font-weight: bold;
+}
+
+.give-donation-amount {
+	margin-bottom: 15px;
+}
+
+.give-donation-levels-wrap {
+	li {
+		@extend .col-sm-2;
+		width: 20%;
+		@media (max-width: $screen-sm-min) {
+			width: 50%;
+		}
+	}
+}
+
+#give-gateway-radio-list {
+	li {
+		@extend .col-sm-4;
+	}
+}
+
+.give-donation-levels-wrap,
+#give-gateway-radio-list {
+	li {
+		label {
+			display: inline-block;
+			width: auto;
+			padding: 10px 0px;
+
+		}
+	}
+	input[type=radio] {
+		height: 14px;
+		margin-right: 5px;
+	}
+}
+
+.give-form-wrap {
+	.form-row {
+		margin-bottom: 20px;
+	}
+
+	#address_1-wrap {
+		margin-bottom: 0;
+	}
+
+	label {
+		width: 100%;
+		display: block;
+	}
+
+	input[type=text],
+	input[type=email] {
+		width: 100%;
+	}
+
+	#give-first-name-wrap,
+	#give-last-name-wrap {
+		@extend .col-md-6;
+	}
+
+	#give-email-wrap,
+	#address_1-wrap,
+	#address_2-wrap,
+	#city-wrap {
+		@extend .col-md-12;
+	}
+
+	#postal_code-wrap, #country-wrap {
+		@extend .col-md-3;
+	}
+	#region-wrap {
+		@extend .col-md-6;
+	}
+}
+
+#give-payment-mode-wrap,
+#give_purchase_submit {
+	@extend .col-md-12;
+}
+
+#give_checkout_user_info {
+	legend {
+		@extend .col-md-12;
+	}
+}
+
+#give-final-total-wrap {
+	font-size: 20px;
+	font-family: $font-serif;
+	font-weight: bold;
+	margin: 1em 0;
+}
+
+.give-btn {
+	@extend .btn;
+}
+
 #donationBg {
 	background: url(../img/bg_donation.png) center top no-repeat;
 	// width: 681px;
@@ -3309,7 +3424,7 @@ body.analytics {
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			.status {
-				font-family: "Georgia", "Times New Roman", "Times", serif;
+				font-family: $font-serif;
 				font-style: oblique;
 				color: #bab2ac;
 				line-height: 18px;
@@ -3520,7 +3635,7 @@ body.leaderboard {
 	margin-top: 5px;
 }
 h3.totalNum {
-	font-family: "prenton-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: $font-prenton;
 	font-size: 300%;
 	margin: 0 0 10px 0;
 	color: rgba(99, 94, 91, .9);
@@ -3886,7 +4001,7 @@ div.drupal {
 	li {
 		display: inline;
 		max-width: none;
-		font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: $font-prenton;
 		color: #000;
 		font-size: 17px;
 		font-weight: 300;
@@ -4131,7 +4246,7 @@ address {
 	color: #AD8937;
 }
 .OQOG h5 {
-	font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: $font-prenton;
 	font-size: 20px;
 	font-weight: 100;
 	margin-bottom: 5px;
@@ -4156,7 +4271,7 @@ address {
 .OQOG h6 {
 	padding-top: 60px;
 	color: #78BCBF;
-	font-family: "prenton-condensed", "franklin-gothic-urw-cond", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: $font-prenton;
 	font-size: 30px;
 	font-weight: 100;
 }
@@ -4185,7 +4300,7 @@ img.desaturate {
 }
 .OCOG blockquote p span {
 	font-size: 36px;
-	font-family: georgia;
+	font-family: $font-serif;
 	line-height: .1em;
 	color: #909090;
 	position: relative;
@@ -4193,7 +4308,7 @@ img.desaturate {
 }
 .OCOG-details {
 	margin-bottom: 5px;
-	font-family: georgia;
+	font-family: $font-serif;
 	font-size: 12px;
 	font-style: italic;
 	line-height: 18px;
