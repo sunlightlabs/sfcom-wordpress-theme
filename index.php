@@ -2,8 +2,10 @@
 <?php
   $archive_category = false;
   $queried_object = get_queried_object();
-  if(get_class($queried_object) == 'WP_Term') {
-    $archive_category = $queried_object->name;
+  if($queried_object) {
+    if(get_class($queried_object) == 'WP_Term') {
+      $archive_category = $queried_object->name;
+    }
   }
 ?>
   <!-- index.php -->
@@ -11,22 +13,27 @@
     <!-- section -->
     <section>
 
-      <div class="blog-nav">
-        <ul>
-          <li class="channel <?php if(!$archive_category) print 'active' ?>">
-            <a href="/blog/">all</a>
-          </li>
-          <li class="channel technology <?php if($archive_category == 'Technology') print 'active' ?>">
-            <a href="/topics/channels/channel-technology/">technology</a>
-          </li>
-          <li class="channel policy <?php if($archive_category == 'Policy') print 'active' ?>">
-            <a href="/topics/channels/channel-policy/">policy</a>
-          </li>
-          <li class="channel investigations <?php if($archive_category == 'Investigations') print 'active' ?>">
-            <a href="/topics/channels/channel-investigations/">investigations</a>
-          </li>
-        </ul>
-      </div>
+      <?php if(get_search_query()) : ?>
+      <h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+
+      <?php else : ?>
+        <div class="blog-nav">
+          <ul>
+            <li class="channel <?php if(!$archive_category) print 'active' ?>">
+              <a href="/blog/">all</a>
+            </li>
+            <li class="channel technology <?php if($archive_category == 'Technology') print 'active' ?>">
+              <a href="/topics/channels/channel-technology/">technology</a>
+            </li>
+            <li class="channel policy <?php if($archive_category == 'Policy') print 'active' ?>">
+              <a href="/topics/channels/channel-policy/">policy</a>
+            </li>
+            <li class="channel investigations <?php if($archive_category == 'Investigations') print 'active' ?>">
+              <a href="/topics/channels/channel-investigations/">investigations</a>
+            </li>
+          </ul>
+        </div>
+      <?php endif ?>
 
       <?php $has_sticky = false; $done = false;?>
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>

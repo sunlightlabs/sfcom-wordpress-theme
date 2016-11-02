@@ -661,12 +661,6 @@ body.home header {
 				width: 100%;
 			}
 	}
-
-	@media (min-width: $screen-sm-min) {
-		input[type="search"]:focus {
-	    width: 215px;
-		}
-	}
 }
 .searchForm {
 	margin: 70px 5px 0 0;
