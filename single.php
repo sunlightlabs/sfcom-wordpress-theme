@@ -50,6 +50,13 @@
 
       <footer>
         Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
+
+        <?php
+          // If comments are open or we have at least one comment, load up the comment template.
+          if ( comments_open() || get_comments_number() ) :
+            comments_template();
+          endif;
+        ?>
       </footer>
 
       <?php /* comments_template(); */ ?>
