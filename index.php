@@ -16,6 +16,9 @@
       <?php if(get_search_query()) : ?>
       <h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
 
+      <?php elseif(single_tag_title('', false)) : ?>
+      <h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
+
       <?php else : ?>
         <div class="blog-nav">
           <ul>
