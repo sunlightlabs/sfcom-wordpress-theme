@@ -728,7 +728,8 @@ body.home header {
 		background: transparent url(../img/bg_arrowActive.png) center bottom no-repeat;
 }
 
-.current-menu-ancestor .dropdown-menu {
+.current-menu-ancestor .dropdown-menu,
+.current_page_item .dropdown-menu {
 	display: block;
 }
 
