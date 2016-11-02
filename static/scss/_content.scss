@@ -2923,6 +2923,20 @@ table .sorting_desc {
 	#region-wrap {
 		@extend .col-md-6;
 	}
+
+	.give-recurring-donors-choice {
+	  background: transparent;
+	  border: none;
+		margin-bottom: 14px;
+
+	  input[type=checkbox] {
+			height: 14px;
+	  }
+
+	  label {
+			display: inline;
+	  }
+	}
 }
 
 #give-payment-mode-wrap,
