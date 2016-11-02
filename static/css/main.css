@@ -9953,17 +9953,17 @@ body.home header {
 }
 
 /* line 631, ../scss/_content.scss */
-.search {
+.searchForm {
   position: relative;
 }
 @media (max-width: 768px) {
   /* line 631, ../scss/_content.scss */
-  .search {
+  .searchForm {
     width: 100%;
   }
 }
 /* line 636, ../scss/_content.scss */
-.search button {
+.searchForm button {
   background: url(../img/btn_search.png) top left no-repeat;
   width: 21px;
   height: 20px;
@@ -9975,7 +9975,7 @@ body.home header {
   left: inherit;
 }
 /* line 647, ../scss/_content.scss */
-.search input[type="search"] {
+.searchForm input[type="search"] {
   -moz-transition: 400ms width ease;
   -webkit-transition-duration: 400ms;
   -webkit-transition-property: width;
@@ -9990,34 +9990,34 @@ body.home header {
 }
 @media (max-width: 768px) {
   /* line 647, ../scss/_content.scss */
-  .search input[type="search"] {
+  .searchForm input[type="search"] {
     width: 100%;
   }
 }
 @media (min-width: 768px) {
   /* line 666, ../scss/_content.scss */
-  .search input[type="search"]:focus {
+  .searchForm input[type="search"]:focus {
     width: 215px;
   }
 }
 
 /* line 671, ../scss/_content.scss */
-.search {
+.searchForm {
   margin: 70px 5px 0 0;
   height: 18px;
   float: right;
 }
 @media (max-width: 768px) {
   /* line 671, ../scss/_content.scss */
-  .search {
+  .searchForm {
     margin: 36px 0 0;
   }
 }
 
 /* line 679, ../scss/_content.scss */
-.search input[type="search"] {
+.searchForm input[type="search"] {
   border-top: 0;
-  width: 215px;
+  width: 300px;
   font-size: 120%;
   padding: 10px 40px 7px 7px;
   -moz-opacity: 0.80;
@@ -10030,7 +10030,7 @@ body.home header {
 }
 
 /* line 692, ../scss/_content.scss */
-.search button {
+.searchForm button {
   background: url(../img/btn_search.png) top left no-repeat;
   padding-left: 20px;
   padding-right: 0;
@@ -12680,12 +12680,12 @@ table .sorting_desc {
 }
 
 /* line 2994, ../scss/_content.scss */
-.search-icon {
+.searchForm-icon {
   float: left;
 }
 
 /* line 2997, ../scss/_content.scss */
-.search_result_text {
+.searchForm_result_text {
   float: left;
   padding-left: 20px;
 }

@@ -60,7 +60,7 @@
 								)
 							) ?>
 						</div>
-						<?php get_search_form(); ?>
+						<?php print str_replace('class="search"', 'class="searchForm"', get_search_form(false)); ?>
 					</div>
 					<div class="clearfix"></div>
 
