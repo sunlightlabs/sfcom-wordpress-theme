@@ -174,6 +174,7 @@ body#tinymce.wp-editor .divider-title img {
 /* line 157, ../scss/_shared-content.scss */
 body#tinymce.wp-editor ol.list-no-numbers {
   list-style: none;
+  padding-left: 15px;
 }
 /* line 30, ../scss/tinymce.scss */
 body#tinymce.wp-editor .homeFeatures {
