@@ -190,6 +190,17 @@ if (function_exists('register_sidebar'))
         'after_title' => '</h3>'
     ));
 
+    // Policy Sidebar
+    register_sidebar(array(
+        'name' => __('Sidebar Policy', 'html5blank'),
+        'description' => __('Sidebar for Policy Template pages.', 'html5blank'),
+        'id' => 'sidebar-widget-policy',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
     // Media Sidebar
     register_sidebar(array(
         'name' => __('Sidebar Media', 'html5blank'),
