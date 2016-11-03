@@ -150,7 +150,7 @@ function add_slug_to_body_class($classes)
         $classes[] = sanitize_html_class($post->post_name);
     }
 
-    if($post->post_parent) {
+    if($post && $post->post_parent) {
         // Get the parent
         $parent = get_post($post->post_parent);
         $classes[] = 'parent-'.$parent->post_name;
