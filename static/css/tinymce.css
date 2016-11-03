@@ -171,6 +171,10 @@ body#tinymce.wp-editor .divider-title img {
   padding: 0;
   vertical-align: middle;
 }
+/* line 157, ../scss/_shared-content.scss */
+body#tinymce.wp-editor ol.list-no-numbers {
+  list-style: none;
+}
 /* line 30, ../scss/tinymce.scss */
 body#tinymce.wp-editor .homeFeatures {
   border: 2px solid #666;

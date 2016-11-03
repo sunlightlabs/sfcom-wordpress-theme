@@ -625,6 +625,11 @@ function html5_mce_before_init_insert_formats( $init_array ) {
             'block' => 'div'
         ),
         array(
+            'title' => 'No Number List',
+            'classes' => 'list-no-numbers',
+            'selector' => 'ol'
+        ),
+        array(
             'title' => 'VIP List',
             'classes' => 'vips',
             'selector' => 'ul',
