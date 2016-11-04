@@ -71,6 +71,14 @@ function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
+        // The relative urls plugin is messing script loading up.
+        remove_filter('script_loader_src',
+            array(
+                'MP_WP_Root_Relative_URLS',
+                'proper_root_relative_url'
+            )
+        );
+
     	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr');
 
