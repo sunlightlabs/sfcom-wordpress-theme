@@ -24,8 +24,6 @@
 		<?php /* <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed" /> */ ?>
 		<link rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
 		<link rel="mission" href="http://sunlightfoundation.com/about/" />
-		<link rel="bitcoin" href="bitcoin:1Nt6CD1SHcvA2sfugx1gqbQQ25gQRA5fBm" title="Bitcoin donation address" />
-		<link rel="payment" href="bitcoin:1Nt6CD1SHcvA2sfugx1gqbQQ25gQRA5fBm" title="Bitcoin donation address" />
 		<link rel="payment" href="https://sunlightfoundation.com/donate/" title="Donate to the Sunlight Foundation" type="text/html" />
 		<link href="//www.google-analytics.com" rel="dns-prefetch" />
 		<!-- rss feeds -->
