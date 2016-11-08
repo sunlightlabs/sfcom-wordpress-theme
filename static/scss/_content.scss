@@ -2886,6 +2886,8 @@ table .sorting_desc {
 .give-form-wrap {
 	.form-row {
 		margin-bottom: 20px;
+		// Have to use important to override the stupid bootstrap default.
+		min-height: 68px !important;
 	}
 
 	#address_1-wrap {
@@ -2910,14 +2912,31 @@ table .sorting_desc {
 	#give-email-wrap,
 	#address_1-wrap,
 	#address_2-wrap,
-	#city-wrap {
+	#give-card-address-wrap,
+	#give-card-address-2-wrap,
+	#city-wrap,
+	#give-card-city-wrap,
+	#give-card-name-wrap {
 		@extend .col-md-12;
 	}
 
-	#postal_code-wrap, #country-wrap {
+	#give-card-number-wrap,
+	#give-card-cvc-wrap,
+	.card-expiration {
+		@extend .col-md-4;
+	}
+
+	#postal_code-wrap,
+	#country-wrap{
 		@extend .col-md-3;
 	}
 	#region-wrap {
+		@extend .col-md-6;
+	}
+
+	#give-card-zip-wrap,
+	#give-card-country-wrap,
+	#give-card-state-wrap {
 		@extend .col-md-6;
 	}
 
@@ -2941,7 +2960,9 @@ table .sorting_desc {
 	@extend .col-md-12;
 }
 
-#give_checkout_user_info {
+#give_cc_fields,
+#give_checkout_user_info,
+#give_cc_address {
 	legend {
 		@extend .col-md-12;
 	}
@@ -4939,5 +4960,46 @@ body.crp_report .selected {
       margin-bottom: 1rem;
     }
 
+  }
+}
+
+// Rex the Cleanosaurus
+
+.cleanoboxus {
+  @extend .col-md-12;
+	background-color: #363942;
+	color: #f9f3e6;
+  padding: 10px 0 8px 12px;
+  margin: 38px auto 0 auto;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+	.img {
+		width: 144px;
+		height: 150px;
+		display: inline-block;
+		overflow: hidden;
+	}
+  img {
+  	width: 144px;
+  }
+  .name {
+  	display: inline-block;
+  	vertical-align: top;
+  	text-transform: uppercase;
+  	font-size: 30px;
+  	line-height: 1.5;
+  	margin-left: 10px;
+  }
+  .rex {
+  	float: right;
+    width: 180px;
+    height: 200px;
+		position: absolute;
+    top: -33px;
+    right: 0;
+  }
+  p {
+  	margin: 0;
   }
 }
