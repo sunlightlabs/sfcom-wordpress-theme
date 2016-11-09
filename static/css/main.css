@@ -11600,7 +11600,7 @@ ul.initiatives {
 }
 @media (min-width: 768px) {
   /* line 2022, ../scss/_content.scss */
-  .blog-post .author + *, .blog-post .channels + * {
+  .blog-post .channels, .blog-post time {
     border-left: 1px solid #eceae3;
     margin-left: 10px;
     padding-left: 10px;
@@ -15167,7 +15167,13 @@ body.crp_report .selected {
   top: -33px;
   right: 0;
 }
-/* line 5002, ../scss/_content.scss */
+@media (max-width: 768px) {
+  /* line 4994, ../scss/_content.scss */
+  .cleanoboxus .rex {
+    display: none;
+  }
+}
+/* line 5005, ../scss/_content.scss */
 .cleanoboxus p {
   margin: 0;
 }

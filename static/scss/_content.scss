@@ -2019,7 +2019,7 @@ ul.initiatives {
     max-width: none;
   }
 	@media (min-width: $screen-sm-min) {
-		.author + *, .channels + * {
+		.channels, time {
 	    border-left: 1px solid #eceae3;
 	    margin-left: 10px;
 	    padding-left: 10px;
@@ -4998,6 +4998,9 @@ body.crp_report .selected {
 		position: absolute;
     top: -33px;
     right: 0;
+    @media (max-width: $screen-sm-min) {
+			display: none;
+    }
   }
   p {
   	margin: 0;
