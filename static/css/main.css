@@ -9762,8 +9762,8 @@ h1, h2, h3, h4 {
 /* line 457, ../scss/_content.scss */
 h1, .entry-title {
   font-family: "Georgia", "Times New Roman", "Times", serif;
-  font-size: 191.72%;
-  line-height: 33px;
+  font-size: 380%;
+  line-height: 1;
 }
 @media (max-width: 768px) {
   /* line 457, ../scss/_content.scss */
@@ -9781,9 +9781,9 @@ h1, .entry-title {
 /* line 469, ../scss/_content.scss */
 h2 {
   margin-bottom: 30px;
-  font-size: 343.36%;
+  font-size: 300%;
   text-transform: uppercase;
-  line-height: 45px;
+  line-height: 1;
   font-weight: 300;
   font-family: "prenton-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
