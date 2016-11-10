@@ -2459,6 +2459,15 @@ li.channel {
 			}
 		}
 	}
+	footer {
+		padding-top: 15px;
+		border-top: 1px dotted #dddbd9;
+		margin-top: 30px;
+
+		.tags {
+			margin-bottom: 15px;
+		}
+	}
 }
 
 .blog-nav {

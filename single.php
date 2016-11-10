@@ -42,11 +42,11 @@
 
       <?php the_content(); // Dynamic Content ?>
 
-      <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-      <p><?php _e( 'Categorized in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
-
       <footer>
+        <div class="tags"><?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?></div>
+
+        <div class="category"><?php _e( 'Categorized in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></div>
+
         Share This: <?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?>
 
         <?php
