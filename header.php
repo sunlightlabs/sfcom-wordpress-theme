@@ -5,19 +5,6 @@
 		<meta name="google-site-verification" content="NlacukJ732mOgu29HDKLFLpfIailVIsd4YsnFMyAcd4" />
 		<meta name="readability-verification" content="9jx4vULkHqF9P2QvTEyg5HEqMEFtXSFEaGsCZ8b8" />
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
-		<!-- open graph tags -->
-		<meta property="og:site_name" content="Sunlight Foundation" />
-		<meta property="og:title" content="Sunlight Foundation" />
-		<meta property="og:description" content="Making government transparent and accountable." />
-		<meta property="og:type" content="non_profit" />
-		<meta property="og:url" content="http://sunlightfoundation.com/" />
-		<meta property="og:email" content="contact@sunlightfoundation.com" />
-		<meta property="og:phone_number" content="202-742-1520" />
-		<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/sflogox180-2012.jpg" />
-		<meta property="fb:page_id" content="6921874941" />
-		<meta property="og:locale" content="en_US">
-		<meta property="fb:admins" content="7812952">
-		<!-- end open graph elements -->
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="<?php bloginfo('description'); ?>" />
 		<link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon" />
